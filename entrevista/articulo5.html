@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KINETOS</title>
+  <link rel="icon" href="https://vvrl.cc/es/mb7l8d">
+  <link rel="stylesheet" href="../css/articulos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="global-navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-title">INNOV<span>ART</span></span>
+      <span class="nav-brand-sub">UNITEC</span>
+    </div>
+    <a href="../entrevista.html" class="nav-center-link">KINETOS</a>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
+        <span id="themeIcon">
+          <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </span>
+        <span class="theme-label" id="themeLabel">Oscuro</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="article-view">
+    <div class="article-header">
+      <a href="../entrevista.html" class="back-btn">Volver a entrevistas</a>
+      <span class="article-title">Entrevistado · Título del artículo</span>
+      <span class="page-indicator" id="pageIndicator">Página 1 / 2</span>
+    </div>
+
+    <div class="pages-container">
+      <!-- Página 1 -->
+      <div class="page">
+        <div class="page-number">Página 1 de 2</div>
+        <div class="page-content">
+          <h2>Título de la primera <span class="highlight">sección</span></h2>
+          <p class="byline">Entrevista a Nombre Apellido · Julio 2026</p>
+          <p>Contenido de la primera página de la entrevista. Aquí va el texto principal que describe al entrevistado y el tema de conversación.</p>
+          <p>Segundo párrafo introductorio con más contexto sobre el tema central de la entrevista.</p>
+          <div class="quote">"Cita destacada del entrevistado que resume su visión o postura sobre el tema."</div>
+          <p>Cierre del primer capítulo con una transición hacia el siguiente tema de la entrevista.</p>
+        </div>
+      </div>
+
+      <!-- Página 2 -->
+      <div class="page">
+        <div class="page-number">Página 2 de 2</div>
+        <div class="page-content">
+          <h2>Título de la segunda <span class="highlight">sección</span></h2>
+          <p>Contenido de la segunda página. Continúa la conversación con profundidad en un subtema específico.</p>
+          <p>Más desarrollo del tema, ejemplos concretos y casos de aplicación mencionados por el entrevistado.</p>
+          <p>Tercer párrafo con reflexiones adicionales y datos o proyectos mencionados en la entrevista.</p>
+          <div class="quote">"Segunda cita importante que cierra o resume el mensaje final del entrevistado."</div>
+          <p>Conclusión de la entrevista con el mensaje final y perspectivas a futuro del entrevistado.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-pages">
+      <button id="prevPage" disabled>&#8249;</button>
+      <button id="nextPage">&#8250;</button>
+    </div>
+  </div>
+
+  <script src="../js/articulo.js" defer></script>
+
+  <footer class="global-footer">
+    Desarrollado por Innovart &nbsp;-&nbsp; <span>Kinetos <span id="currentYear">2026</span></span>
+  </footer>
+</body>
+
+</html>

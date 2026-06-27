@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Kinetos - Revista Digital de Desarrollo de Capital Humano. Entrevistas con líderes en innovación y gestión del talento.">
+  <title>KINETOS</title>
+  <link rel="icon" href="https://vvrl.cc/es/mb7l8d">
+  <link rel="stylesheet" href="css/entrevista.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* Fade in al cargar la página */
+    body {
+      opacity: 0;
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: scale(0.97);
+    }
+
+    body.loaded {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="global-navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-title">INNOV<span>ART</span></span>
+      <span class="nav-brand-sub">UNITEC</span>
+    </div>
+    <a href="#" class="nav-center-link">KINETOS</a>
+    <div class="nav-actions">
+      <button class="nav-search-btn" id="searchBtn" aria-label="Buscar" title="Buscar entrevistas">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
+        <span id="themeIcon">
+          <!-- Moon icon (default dark mode) -->
+          <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <!-- Sun icon (light mode) -->
+          <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </span>
+        <span class="theme-label" id="themeLabel">Oscuro</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="search-bar-container" id="searchBarContainer">
+    <input type="text" id="searchInput" placeholder="Buscar entrevistas por nombre o tema...">
+  </div>
+
+
+  <div class="container">
+    <header class="mb-6 text-center">
+      <h1 class="text-3xl font-bold">Entrevistas</h1>
+      <p class="text-sm text-purple-300">Selecciona una entrevista</p>
+    </header>
+
+    <main>
+      <div class="card-grid">
+        <article class="card-glow">
+          <div class="card-image">
+            <span class="card-badge">Entrevista</span>
+            <img
+              src="https://images.pexels.com/photos/4687575/pexels-photo-4687575.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Entrevista a Carlos Mendoza">
+            <div class="card-caption">
+              <h2>Entrevista con Dr. Carlos Mendoza</h2>
+              <p>Actor principal: líder de innovación con visión 3D del futuro laboral.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>El talento tras la revista</h3>
+            <p>Una conversación sobre cómo reinventar equipos, cultura y proyectos creativos con impacto real.</p>
+            <a href="entrevista/articulo1.html" class="card-button">Leer entrevista</a>
+          </div>
+        </article>
+
+        <article class="card-glow">
+          <div class="card-image">
+            <span class="card-badge">Entrevista</span>
+            <img
+              src="https://images.pexels.com/photos/27086922/pexels-photo-27086922.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Entrevista a María González">
+            <div class="card-caption">
+              <h2>Entrevista con Ing. María González</h2>
+              <p>Actor principal: directora de equipos que transforma ideas en resultados.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Construyendo equipos ágiles</h3>
+            <p>Descubre cómo lidera con estrategia, empatía y energía para nuevos desafíos.</p>
+            <a href="entrevista/articulo2.html" class="card-button">Leer entrevista</a>
+          </div>
+        </article>
+
+        <article class="card-glow">
+          <div class="card-image">
+            <span class="card-badge">Entrevista</span>
+            <img
+              src="https://images.pexels.com/photos/5965684/pexels-photo-5965684.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Entrevista a Javier Torres">
+            <div class="card-caption">
+              <h2>Entrevista con Javier Torres</h2>
+              <p>Actor principal: creador de experiencias flotantes y narrativas visuales.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>Creatividad y diseño 3D</h3>
+            <p>Un relato sobre proyectos inmersivos y la imagen que conecta con el público digital.</p>
+            <a href="entrevista/articulo3.html" class="card-button">Leer entrevista</a>
+          </div>
+        </article>
+
+        <article class="card-glow">
+          <div class="card-image">
+            <span class="card-badge">Entrevista</span>
+            <img
+              src="https://images.pexels.com/photos/8937582/pexels-photo-8937582.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Entrevista a Laura Méndez">
+            <div class="card-caption">
+              <h2>Entrevista con Laura Méndez</h2>
+              <p>Actor principal: estratega visual que trae luz y movimiento a cada página.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <h3>La imagen principal renovada</h3>
+            <p>Historias de transformación, branding y el poder de una portada con presencia auténtica.</p>
+            <a href="entrevista/articulo4.html" class="card-button">Leer entrevista</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="mt-6 flex justify-center z-20 footer-button">
+        <a href="revista.html" id="interviews-link"
+          class="canva-button px-6 py-3 rounded-lg border border-purple-500/60 bg-purple-900/30 hover:bg-purple-900/50 transition-all"
+          style="backdrop-filter: blur(4px);">
+          <span class="canva-text text-sm font-semibold"
+            style="color: rgb(233, 213, 255); font-weight: 600; font-style: normal; font-size: 16px;">VOLVER A LA
+            REVISTA</span>
+        </a>
+      </div>
+    </main>
+  </div>
+  <footer class="global-footer">
+    Desarrollado por Innovart &nbsp;-&nbsp; <span>Kinetos <span id="currentYear">2026</span></span>
+  </footer>
+
+  <script src="js/entrevista.js" defer></script>
+</body>
+
+</html>

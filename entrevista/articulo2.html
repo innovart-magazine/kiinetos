@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KINETOS</title>
+  <link rel="stylesheet" href="../css/articulos.css">
+  <link rel="icon" href="https://vvrl.cc/es/mb7l8d">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="global-navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-title">INNOV<span>ART</span></span>
+      <span class="nav-brand-sub">UNITEC</span>
+    </div>
+    <a href="../entrevista.html" class="nav-center-link">KINETOS</a>
+        <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
+        <span id="themeIcon">
+          <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </span>
+        <span class="theme-label" id="themeLabel">Oscuro</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="article-view">
+    <div class="article-header">
+      <a href="../entrevista.html" class="back-btn">Volver a entrevistas</a>
+      <span class="article-title">Javier Torres · Creatividad y diseño 3D</span>
+      <span class="page-indicator" id="pageIndicator">Página 1 / 2</span>
+    </div>
+
+    <div class="pages-container">
+      <!-- Página 1 -->
+      <div class="page">
+        <div class="page-number">Página 1 de 2</div>
+        <div class="page-content">
+          <h2>Creatividad y diseño <span class="highlight">3D</span></h2>
+          <p class="byline">Entrevista a Javier Torres · Julio 2026</p>
+          <p>Javier Torres es un artista visual que ha llevado la narrativa digital a otro nivel. Sus “experiencias
+            flotantes” combinan realidad aumentada, diseño sonoro y storytelling interactivo.</p>
+          <p>En esta entrevista, Javier nos cuenta cómo nació su pasión por el 3D y cómo ha logrado que sus proyectos
+            conecten con audiencias de todo el mundo. “No se trata de tecnología, se trata de emociones”, dice.</p>
+          <div class="quote">“El diseño 3D me permite construir mundos donde las reglas las pongo yo. Esa libertad es
+            adictiva.”</div>
+          <p>Javier ha trabajado con marcas y museos, creando instalaciones que invitan a la exploración. Su enfoque:
+            que el usuario sea parte activa de la historia.</p>
+        </div>
+      </div>
+
+      <!-- Página 2 -->
+      <div class="page">
+        <div class="page-number">Página 2 de 2</div>
+        <div class="page-content">
+          <h2>Proyectos <span class="highlight">inmersivos</span></h2>
+          <p>Uno de sus trabajos más reconocidos es “Nebula”, una experiencia flotante que simula un viaje interestelar
+            utilizando proyecciones mapeadas y sensores de movimiento.</p>
+          <p>“Quería que la gente sintiera que flota en el espacio, que perdiera la noción del suelo. Eso requiere una
+            sincronización perfecta entre imagen, sonido y espacio físico.”</p>
+          <p>Javier también habla sobre los desafíos de llevar estas experiencias a entornos digitales: “La pantalla es
+            una ventana, pero el verdadero potencial está en romper la cuarta pared”.</p>
+          <p>Su próximo proyecto es una serie de narrativas inmersivas para dispositivos móviles, donde el usuario podrá
+            explorar ciudades ficticias con capas de realidad aumentada.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-pages">
+      <button id="prevPage" disabled>‹</button>
+      <button id="nextPage">›</button>
+    </div>
+  </div>
+
+  <script src="../js/articulo.js" defer></script>
+
+  <footer class="global-footer">
+    Desarrollado por Innovart &nbsp;-&nbsp; <span>Kinetos <span id="currentYear">2026</span></span>
+  </footer>
+</body>
+
+</html>

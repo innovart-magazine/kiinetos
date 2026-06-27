@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kinetos - Revista Digital de Desarrollo de Capital Humano. Entrevistas con líderes en innovación y gestión del talento.">
+  <title>KINETOS</title>
+  <link rel="icon" href="https://vvrl.cc/es/mb7l8d">
+  <link rel="stylesheet" href="css/revista.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800;900&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- SPLASH -->
+  <div class="splash" id="splash">
+    <h1>KIN<span>E</span>TOS</h1>
+    <p>REVISTA DIGITAL DE INNOVART</p>
+  </div>
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-spacer"></div>
+    <div class="navbar-center-logo">
+      <img src="img/sk8vl.jpg" alt="Logo Innovart" class="navbar-logo">
+    </div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+      <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+      <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" />
+        <line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" />
+        <line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- PORTADA -->
+  <div class="cover-wrapper">
+    <div class="cover">
+
+      <!-- Top bar: logo + edición -->
+      <div class="cover-topbar">
+        <div class="cover-logo">
+          <div class="cover-logo-name">
+            <span class="letter-k">K</span>inetos
+          </div>
+          <div class="underline-bar"></div>
+          <div class="cover-tagline">Revista de Desarrollo de Capital Humano</div>
+        </div>
+        <div class="cover-edition">Edición 12 · Año 2026</div>
+      </div>
+
+      <!-- Hero image -->
+      <div class="cover-hero">
+        <img src="https://images.pexels.com/photos/5965684/pexels-photo-5965684.jpeg?auto=compress&cs=tinysrgb&w=800"
+          alt="Liderazgo transformador – profesionales innovando" loading="eager">
+        <div class="cover-hero-overlay"></div>
+        <div class="cover-headline">
+          <h2>Liderazgo Transformador:<br><span>Tu Ventaja Competitiva</span></h2>
+          <p>Cómo los Valores Vivos Impulsan el Crecimiento Sostenible</p>
+        </div>
+      </div>
+
+      <!-- Topic strips -->
+      <div class="cover-topics">
+        <div class="topic-item">
+          <div class="topic-icon">⚙️</div>
+          <div class="topic-label">Tecnología<br>y Personas</div>
+          <div class="topic-desc">El Futuro de RRHH</div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-icon">🏆</div>
+          <div class="topic-label">Gestión del<br>Talento</div>
+          <div class="topic-desc">De la Contratación al Éxito</div>
+        </div>
+        <div class="topic-item">
+          <div class="topic-icon">⚖️</div>
+          <div class="topic-label">Bienestar<br>Corporativo</div>
+          <div class="topic-desc">Más que solo Beneficios</div>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="cover-cta">
+        <a href="entrevista.html" class="btn-entrevistas" id="interviews-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          Ver Entrevistas
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    Desarrollado por <span>&nbsp;Innovart&nbsp;</span> &mdash; <span>&nbsp;Kinetos <span id="currentYear">2026</span></span>
+  </footer>
+
+  <script src="js/revista.js" defer></script>
+</body>
+
+</html>
