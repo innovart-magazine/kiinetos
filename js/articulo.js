@@ -62,22 +62,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ===== Transición de vuelta a entrevistas =====
 document.addEventListener('DOMContentLoaded', function() {
-    const backBtn = document.querySelector('.back-btn');
-    if (!backBtn) return;
+    const backBtns = document.querySelectorAll('.back-btn, .nav-center-link');
+    
+    backBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();                 // Evita la navegación inmediata
+            const href = this.getAttribute('href');
 
-    backBtn.addEventListener('click', function(e) {
-        e.preventDefault();                 // Evita la navegación inmediata
-        const href = this.getAttribute('href');
+            // Aplica fade out + escala al body
+            document.body.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'scale(0.96)';
 
-        // Aplica fade out + escala al body
-        document.body.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        document.body.style.opacity = '0';
-        document.body.style.transform = 'scale(0.96)';
-
-        // Redirige después de que termine la transición
-        setTimeout(function() {
-            window.location.href = href;
-        }, 650);
+            // Redirige después de que termine la transición
+            setTimeout(function() {
+                window.location.href = href;
+            }, 650);
+        });
     });
 });
 

@@ -1,7 +1,11 @@
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  overflow: hidden;
 }
 
 body {
@@ -44,6 +48,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 5;
+  min-height: 56px;
 }
 
 .article-header .back-btn {
@@ -95,6 +100,13 @@ body {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   background: #0b0b0b;
+  /* Ocultar scrollbar horizontal manteniendo funcionalidad de scroll */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge legacy */
+}
+
+.pages-container::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari, Opera */
 }
 
 .page {
@@ -109,6 +121,13 @@ body {
   justify-content: flex-start;
   border-right: 1px solid #222;
   position: relative;
+  /* Ocultar scrollbar vertical de cada página */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.page::-webkit-scrollbar {
+  display: none;
 }
 
 .page::after {
@@ -137,20 +156,21 @@ body {
 }
 
 .page-content {
-  max-width: 780px;
+  max-width: 700px;
   margin: 0 auto;
   width: 100%;
   color: #e0e0e0;
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.85;
 }
 
 .page-content h2 {
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 .page-content h2 .highlight {
@@ -158,22 +178,40 @@ body {
 }
 
 .page-content p {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+/* Drop cap: primera letra del primer párrafo real de cada página */
+.page-content p:not(.byline):first-of-type::first-letter {
+  float: left;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 0.8;
+  margin-right: 0.12em;
+  margin-top: 0.08em;
+  color: #a855f7;
+  font-family: 'Inter', sans-serif;
 }
 
 .page-content .quote {
   border-left: 4px solid #8e24aa;
-  padding-left: 1.5rem;
+  padding: 0.9rem 1.5rem;
   font-style: italic;
   color: #ccc;
-  margin: 1.5rem 0;
-  font-size: 1.1rem;
+  margin: 2rem 0;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  background: rgba(142, 36, 170, 0.06);
+  border-radius: 0 8px 8px 0;
 }
 
 .page-content .byline {
   font-size: 0.9rem;
   color: #888;
   margin-bottom: 2rem;
+  font-style: italic;
+  letter-spacing: 0.02em;
 }
 
 /* ===== BOTONES DE NAVEGACIÃ“N (flotantes) ===== */
@@ -192,6 +230,8 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   opacity: 0.3;
   transition: opacity 0.4s ease;
+  /* touch-action: manipulation evita delay en móviles táctiles */
+  touch-action: manipulation;
 }
 
 .nav-pages:hover,
@@ -308,6 +348,10 @@ body.light-mode .page-content .quote {
 
 body.light-mode .page-content .byline {
   color: #4b4b4b;
+}
+
+body.light-mode .page-content p:not(.byline):first-of-type::first-letter {
+  color: #7c3aed;
 }
 
 body.light-mode .nav-pages {
@@ -451,8 +495,7 @@ body.light-mode .nav-pages button:hover {
 /* Ajustes a la vista de artículo para que deje espacio al Navbar y Footer */
 .article-view {
   top: 60px;
-  height: calc(100% - 100px);
-  /* 60px nav + 40px footer */
+  height: calc(100% - 100px); /* 60px nav + 40px footer */
 }
 
 /* Agrandar botones de paginación */
@@ -478,11 +521,13 @@ body.light-mode .nav-pages button:hover {
     transform: translateX(-50%);
     right: auto;
     bottom: 50px;
+    /* En móvil táctil siempre visible — no hay hover */
+    opacity: 1;
   }
 
   /* Ajuste de márgenes y texto para celulares */
   .page {
-    padding: 1.5rem 1.25rem 120px;
+    padding: 1.5rem 1.25rem 90px;
   }
 
   .page-content h2 {
@@ -493,6 +538,7 @@ body.light-mode .nav-pages button:hover {
   .article-header {
     flex-wrap: wrap;
     padding: 0.8rem 1rem;
+    min-height: auto;
   }
 
   .article-header .article-title {
@@ -509,8 +555,96 @@ body.light-mode .nav-pages button:hover {
   .article-header .page-indicator {
     font-size: 0.85rem;
   }
+
+  /* Ajuste de font-size y drop cap en móvil */
+  .page-content {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .page-content p:not(.byline):first-of-type::first-letter {
+    font-size: 2.6rem;
+    margin-right: 0.1em;
+  }
 }
 
+
+/* ===== H3 Y LISTA DE BENEFICIOS (Página 2) ===== */
+.page-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #a855f7;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+  padding-left: 0.9rem;
+  border-left: 3px solid #8e24aa;
+  line-height: 1.3;
+}
+
+.lista-beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.lista-beneficios li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(142, 36, 170, 0.08);
+  border: 1px solid rgba(142, 36, 170, 0.2);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  color: #d4d4d4;
+  line-height: 1.55;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.lista-beneficios li:hover {
+  background: rgba(142, 36, 170, 0.15);
+  border-color: rgba(142, 36, 170, 0.4);
+}
+
+.lista-beneficios li::before {
+  content: '✦';
+  color: #a855f7;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.lista-beneficios li strong {
+  color: #c084fc;
+}
+
+/* Light mode: h3 y lista */
+body.light-mode .page-content h3 {
+  color: #7c3aed;
+  border-left-color: #7c3aed;
+}
+
+body.light-mode .lista-beneficios li {
+  background: rgba(124, 58, 237, 0.06);
+  border-color: rgba(124, 58, 237, 0.2);
+  color: #222;
+}
+
+body.light-mode .lista-beneficios li:hover {
+  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+body.light-mode .lista-beneficios li::before {
+  color: #7c3aed;
+}
+
+body.light-mode .lista-beneficios li strong {
+  color: #5b21b6;
+}
 
 /* Theme label */
 .theme-label {
@@ -519,7 +653,82 @@ body.light-mode .nav-pages button:hover {
 }
 
 /* Compensate article-view for fixed navbar height */
+/* NOTA: esta regla es la activa. La anterior (line ~493) queda como fallback base.
+   En desktop se sobreescribe por el @media (min-width: 769px) al final del archivo. */
 .article-view {
   top: 60px;
   height: calc(100vh - 100px);
+}
+
+/* Drop cap: desactivar en pantallas muy pequeñas (<360px) para evitar artefactos */
+@media (max-width: 360px) {
+  .page-content p:not(.byline):first-of-type::first-letter {
+    float: none;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    margin: 0;
+  }
+
+  .page {
+    padding: 1rem 1rem 80px;
+  }
+
+  .page-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .page-content {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== DESKTOP NAVBAR & FOOTER LARGER ===== */
+@media (min-width: 769px) {
+  .global-navbar {
+    height: 80px;
+    padding: 0 40px;
+  }
+
+  .nav-brand-title {
+    font-size: 18px;
+  }
+
+  .nav-brand-sub {
+    font-size: 12px;
+  }
+
+  .nav-center-link {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+
+  .theme-toggle {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+
+  .theme-label {
+    font-size: 13px;
+  }
+
+  .nav-search-btn {
+    font-size: 22px;
+  }
+
+  .global-footer {
+    height: 52px;
+    font-size: 14px;
+  }
+
+  /* Ajustar article-view para el navbar más alto en desktop */
+  .article-view {
+    top: 80px;
+    height: calc(100vh - 132px); /* 80px nav + 52px footer */
+  }
+
+  /* Subir los botones de paginación para que no queden tapados por el footer más alto */
+  .nav-pages {
+    bottom: 68px;
+  }
 }

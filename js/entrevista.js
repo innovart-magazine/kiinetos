@@ -40,11 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Transición de vuelta a la portada
-  const backBtn = document.getElementById('interviews-link');
-  if (backBtn) {
-    backBtn.addEventListener('click', function (e) {
+  const backBtns = document.querySelectorAll('#interviews-link, .nav-center-link');
+  backBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
       e.preventDefault();
       const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+
       document.body.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       document.body.style.opacity = '0';
       document.body.style.transform = 'scale(0.96)';
@@ -52,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = href;
       }, 650);
     });
-  }
+  });
 
   // Transición para los botones "LEER ENTREVISTA"
   document.querySelectorAll('.card-button').forEach(function(btn) {

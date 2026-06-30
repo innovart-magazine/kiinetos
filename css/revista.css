@@ -454,6 +454,37 @@
     .topic-item:last-child {
       border-bottom: none;
     }
+
+    /* Navbar: ocultar el texto central en pantallas muy pequeñas para evitar solapamiento */
+    .navbar-center {
+      display: none;
+    }
+
+    /* Ajustar padding de portada en móvil */
+    .cover-wrapper {
+      padding: 80px 12px 50px;
+    }
+
+    .cover-logo-name {
+      font-size: clamp(38px, 10vw, 56px);
+    }
+
+    .btn-entrevistas {
+      padding: 12px 20px;
+      font-size: 12px;
+    }
+  }
+
+  /* ========== TABLET (481px - 768px) ========== */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .navbar-center {
+      font-size: 17px;
+      letter-spacing: 3px;
+    }
+
+    .cover-wrapper {
+      padding: 90px 20px 60px;
+    }
   }
 
   /* ========== LOGO NAVBAR ========== */
@@ -471,9 +502,10 @@
   }
 
   .navbar-logo {
-    height: 55px;
+    height: 82px;
     width: auto;
+    margin-top: 25px;
     object-fit: contain;
-    border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
   }

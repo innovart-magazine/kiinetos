@@ -6,13 +6,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KINETOS</title>
   <link rel="stylesheet" href="../css/articulos.css?v=2">
-  <link rel="icon" href="https://vvrl.cc/es/mb7l8d">
+  <link rel="icon" href="../img/innovartnew.png">
   <link rel="stylesheet" href="estilo.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
     rel="stylesheet">
+  <style>
+    .behavior-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    @media (min-width: 769px) {
+      .behavior-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .behavior-card {
+      background: rgba(168, 85, 247, 0.08);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: background 0.2s ease;
+    }
+
+    .behavior-card:hover {
+      background: rgba(168, 85, 247, 0.15);
+    }
+
+    .behavior-num {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #a855f7;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 26px;
+    }
+
+    .behavior-card p {
+      margin: 0 !important;
+      font-size: 0.82rem !important;
+      line-height: 1.5 !important;
+      color: rgba(228, 214, 255, 0.9);
+    }
+
+    body.light-mode .behavior-card {
+      background: rgba(124, 58, 237, 0.06);
+      border-color: rgba(124, 58, 237, 0.3);
+    }
+
+    body.light-mode .behavior-card:hover {
+      background: rgba(124, 58, 237, 0.12);
+    }
+
+    body.light-mode .behavior-card p {
+      color: #222 !important;
+    }
+
+    /* ===== PREMISE CHECKLIST ===== */
+    .premise-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .premise-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(168, 85, 247, 0.07);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      border-radius: 12px;
+      padding: 12px 16px;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .premise-item:hover {
+      background: rgba(168, 85, 247, 0.14);
+      border-color: rgba(168, 85, 247, 0.5);
+    }
+
+    .premise-check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .premise-check::after {
+      content: '✓';
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .premise-item p {
+      margin: 0 !important;
+      font-size: 0.88rem !important;
+      line-height: 1.55 !important;
+      color: rgba(228, 214, 255, 0.92);
+    }
+
+    body.light-mode .premise-item {
+      background: rgba(124, 58, 237, 0.05);
+      border-color: rgba(124, 58, 237, 0.25);
+    }
+
+    body.light-mode .premise-item:hover {
+      background: rgba(124, 58, 237, 0.1);
+      border-color: rgba(124, 58, 237, 0.45);
+    }
+
+    body.light-mode .premise-item p {
+      color: #222 !important;
+    }
+
+    .closing-text {
+      margin-top: 24px !important;
+      margin-bottom: 14px !important;
+      line-height: 1.9 !important;
+      padding-top: 4px;
+    }
+  </style>
 </head>
 
 <body>
@@ -21,19 +151,25 @@
       <span class="nav-brand-title">INNOV<span>ART</span></span>
       <span class="nav-brand-sub">UNITEC</span>
     </div>
-    <a href="../entrevista.html" class="nav-center-link">KINETOS</a>
-        <div class="nav-actions">
+    <a href="../section/entrevista.html" class="nav-center-link">KINETOS</a>
+    <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
         <span id="themeIcon">
-          <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
-          <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
           </svg>
         </span>
         <span class="theme-label" id="themeLabel">Oscuro</span>
@@ -43,42 +179,166 @@
 
   <div class="article-view">
     <div class="article-header">
-      <a href="../entrevista.html" class="back-btn">Volver a entrevistas</a>
-      <span class="article-title">Javier Torres · Creatividad y diseño 3D</span>
-      <span class="page-indicator" id="pageIndicator">Página 1 / 2</span>
+      <a href="../section/entrevista.html" class="back-btn">Volver a entrevistas</a>
+      <span class="article-title"> Econ Malila Silva · La Mejor Versión del Líder</span>
+      <span class="page-indicator" id="pageIndicator">Página 1 / 3</span>
     </div>
 
     <div class="pages-container">
       <!-- Página 1 -->
       <div class="page">
-        <div class="page-number">Página 1 de 2</div>
+        <div class="page-number">Página 1 de 3</div>
         <div class="page-content">
-          <h2>Creatividad y diseño <span class="highlight">3D</span></h2>
-          <p class="byline">Entrevista a Javier Torres · Julio 2026</p>
-          <p>Javier Torres es un artista visual que ha llevado la narrativa digital a otro nivel. Sus “experiencias
-            flotantes” combinan realidad aumentada, diseño sonoro y storytelling interactivo.</p>
-          <p>En esta entrevista, Javier nos cuenta cómo nació su pasión por el 3D y cómo ha logrado que sus proyectos
-            conecten con audiencias de todo el mundo. “No se trata de tecnología, se trata de emociones”, dice.</p>
-          <div class="quote">“El diseño 3D me permite construir mundos donde las reglas las pongo yo. Esa libertad es
-            adictiva.”</div>
-          <p>Javier ha trabajado con marcas y museos, creando instalaciones que invitan a la exploración. Su enfoque:
-            que el usuario sea parte activa de la historia.</p>
+          <h2>¿Eres la mejor versión para tú <span class="highlight">equipo de trabajo?</span></h2>
+          <p class="byline">Del tal palo, tal astilla. De tal Líder, tal equipo...</p>
+
+          <p>Ser la mejor versión, como líder, para un equipo de trabajo, es el mayor ideal de cualquiera.
+            Lograrlo, usualmente no es casualidad, amerita conocimientos, constancia, determinación y mucha paciencia.
+            Es un trabajo de 365 días, sin descansar, con disciplina y dedicación.
+            Basado en principios, acciones y protocolos.</p>
+
+          <p>Para ser una mejor versión, hay un principio clave, como líder:
+            Querer hacerlo y con la gente que tengo.
+            Si no hay deseo, te puedes convertir en la peor versión de tu equipo,
+            generando complicadas consecuencias organizacionales.
+            Esto lo comento a propósito, ya que observo un fenómeno de poca querencia de
+            un líder con su equipo de trabajo (su propia gente), en muchas empresas venezolanas.
+            El objetivo de este artículo es darte algunas sugerencias al respecto.</p>
+
+          <p>Cuando he tenido en mis programas Supervisores, jefes y Gerentes de empresas,
+            desarrollando habilidades de liderazgo o mejorando prácticas para trabajo en equipo,
+            les pregunto qué opinan de su gente, de sus trabajadores, qué es lo que más les molesta de ellos,
+            cuáles son los comportamientos que más les desagradan.
+            A continuación, les comparto algunas de las respuestas recibidas:</p>
+
+          <div class="behavior-grid">
+            <div class="behavior-card">
+              <span class="behavior-num">01</span>
+              <p>Falta de compromiso, con apatías, bajo interés por lo mejor, conformismo, flojera.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">02</span>
+              <p>Impuntualidades, inconsistencias de esfuerzos, acompañadas de irresponsabilidades y ausentismos.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">03</span>
+              <p>Esperar que otros hagan las cosas, dejando que se compliquen, volviendo urgente lo importante.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">04</span>
+              <p>No le ponen el 100%, dando larga a sus obligaciones. No buscan la solución a las cosas. Son antinada
+                para todo.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">05</span>
+              <p>Quejaderas por todo, con inconformidades por cosas simples.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">06</span>
+              <p>Falta de deseo de superación, por ser mejor en la vida.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">07</span>
+              <p>Falta de compañerismo, les cuesta colaborar y cooperar por el beneficio de todos. Se burlan del que le
+                da la mano a otro.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">08</span>
+              <p>Se molestan cuando les pides dar un esfuerzo extra, cuando hay que trabajar más duro.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">09</span>
+              <p>Desconfianza, con mentiras, en donde nadie dice nada, todo se acumula, complicando las relaciones de
+                trabajo. Generando agendas ocultas y chismes.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">10</span>
+              <p>Poco amor por el trabajo, desperdician las oportunidades que la empresa les brinda, para ellos y su
+                propia familia.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">11</span>
+              <p>Poner con exagerada utilización las frases <em>“se me olvidó”</em>, <em>“no puedo”</em>, <em>“lo hago
+                  mañana”</em>.</p>
+            </div>
+            <div class="behavior-card">
+              <span class="behavior-num">12</span>
+              <p>Hiperextra sensibilidad, para tomar todo a mal. Predisposición a creer que el enemigo es el jefe y la
+                empresa.</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Página 2 -->
       <div class="page">
-        <div class="page-number">Página 2 de 2</div>
+        <div class="page-number">Página 2 de 3</div>
+        <div class="page-content" style="display:flex; flex-direction:column; justify-content:center; height:100%;">
+
+          <p>Puedo seguir enumerando muchas más, pero lo que deseo reflexionar sobre lo poco que coloqué, es que lo que
+            pasa, puede ser por los trabajadores, pero <strong>¿Qué tanto tiene que ver el líder en eso que pasa?
+            </strong></p>
+
+          <div class="quote">"Indistintamente del equipo que tengas y, de la situación que te toque vivir, es
+            responsabilidad del Líder tener la mejor versión del equipo. Es al líder a quien le toca pulir a cada
+            miembro del equipo y convertirlos en una mejor versión."</div>
+
+          <p>Partiendo de la premisa anterior, pregúntate: ¿Soy la mejor versión para mi equipo de trabajo?</p>
+          <p>La respuesta se debe mantener en el tiempo, no es cuestión de solo sí o no.</p>
+
+        </div>
+      </div>
+
+      <div class="page">
+        <div class="page-number">Página 3 de 3</div>
         <div class="page-content">
-          <h2>Proyectos <span class="highlight">inmersivos</span></h2>
-          <p>Uno de sus trabajos más reconocidos es “Nebula”, una experiencia flotante que simula un viaje interestelar
-            utilizando proyecciones mapeadas y sensores de movimiento.</p>
-          <p>“Quería que la gente sintiera que flota en el espacio, que perdiera la noción del suelo. Eso requiere una
-            sincronización perfecta entre imagen, sonido y espacio físico.”</p>
-          <p>Javier también habla sobre los desafíos de llevar estas experiencias a entornos digitales: “La pantalla es
-            una ventana, pero el verdadero potencial está en romper la cuarta pared”.</p>
-          <p>Su próximo proyecto es una serie de narrativas inmersivas para dispositivos móviles, donde el usuario podrá
-            explorar ciudades ficticias con capas de realidad aumentada.</p>
+          <h2>¿Qué haces tú para que tu equipo <span class="highlight">sea mejor?</span></h2>
+
+          <p>Lee las siguientes premisas y luego reflexiona en tu interior:</p>
+
+          <div class="premise-list">
+            <div class="premise-item">
+              <span class="premise-check"></span>
+              <p>Tu manera de tratar de modelar respeto y humildad, así como la forma de pedir las cosas, y saberte
+                controlar en los momentos de presión, es la mejor versión de ti con ellos.</p>
+            </div>
+            <div class="premise-item">
+              <span class="premise-check"></span>
+              <p>El saludo de todas las mañanas es con la mejor disposición y cortesía, y con el mismo empeño a cada
+                miembro de tu equipo.</p>
+            </div>
+            <div class="premise-item">
+              <span class="premise-check"></span>
+              <p>¿Estás presente? Cada miembro cuenta con tu apoyo y colaboración, en cualquier momento y
+                circunstancia. Te interesas por el bien de todos, explorando más allá de lo básico, las necesidades
+                de cada miembro del equipo. No se te pasa valorar cualquier progreso o esfuerzo de tu gente,
+                hasta reconocer lo obvio.</p>
+            </div>
+            <div class="premise-item">
+              <span class="premise-check"></span>
+              <p>Eres la mejor versión de dar instrucciones, siempre cerca de ellos y en el mismo lugar de las
+                circunstancias. Tu equipo no necesita de tu presencia constante porque confias plenamente en ellos.</p>
+            </div>
+            <div class="premise-item">
+              <span class="premise-check"></span>
+              <p>¿Enseñas? Tienes un plan que se pueda auditar y ser modelo para otros líderes. La frecuencia con lo que
+                haces, es un ejemplo de tu mejor versión. Enseñando generas momentos positivos e inolvidables, y
+                los haces mejores para la vida.</p>
+            </div>
+            <div class="premise-item">
+              <span class="premise-check"></span>
+              <p>Eres el más rápido y primero en resolver las quejas y necesidades de tu gente, logrando admiración
+                y respeto por ello. Mantienes al equipo tan unido, que conoces detalles más allá de lo mero
+                laboral. Compartes más allá de la frontera de la empresa con tu equipo.</p>
+            </div>
+            <div class="premise-item">
+              <span class="premise-check"></span>
+              <p>Si todo lo anterior te califica, entonces tu tasa de cumplimiento ante promesas se aproxima al
+                <strong>100 por ciento</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="quote">Te aseguro que, mejorando el modelaje de estas premisas, ese equipo—<em>tu equipo</em>—elevará la calidad de su gente, aumentará los índices de productividad y te convertirá de jefe a un ser querido. El entorno influye, pero es el líder quien asegura la mejor versión de hacerlo, para bien o para mal, tarde o temprano.</div>
         </div>
       </div>
     </div>

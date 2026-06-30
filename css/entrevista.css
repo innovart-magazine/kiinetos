@@ -1,4 +1,4 @@
-﻿/* ===== BASE STYLES ===== */
+/* ===== BASE STYLES ===== */
 body {
   font-family: 'Raleway', sans-serif;
   background: #08020f;
@@ -11,7 +11,7 @@ body {
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 16px 60px;
+  padding: 80px 16px 100px;
 }
 
 /* ===== CARD GRID ===== */
@@ -54,8 +54,13 @@ body {
   width: 100%;
   height: 360px;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, filter 0.3s ease;
   display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: high-quality;
+  filter: contrast(1.05) saturate(1.08);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .card-glow:hover .card-image img {
@@ -374,4 +379,165 @@ body.light-mode .canva-text {
 .search-bar-container input:focus {
   outline: none;
   border-color: var(--accent);
+}
+
+/* ===== CARD FULL WIDTH ===== */
+.card-full {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ===== CARD SPAN (5th article — same size as others, centered) ===== */
+@media (min-width: 768px) {
+  .card-span {
+    grid-column: span 2;
+    justify-self: center;
+    width: calc(50% - 16px);
+  }
+}
+
+/* ===== DESKTOP NAVBAR & FOOTER LARGER ===== */
+@media (min-width: 769px) {
+  .global-navbar {
+    height: 80px;
+    padding: 0 40px;
+  }
+
+  .nav-brand-title {
+    font-size: 18px;
+  }
+
+  .nav-brand-sub {
+    font-size: 12px;
+  }
+
+  .nav-center-link {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+
+  .theme-toggle {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+
+  .theme-label {
+    font-size: 13px;
+  }
+
+  .nav-search-btn {
+    font-size: 22px;
+  }
+
+  .global-footer {
+    height: 52px;
+    font-size: 14px;
+  }
+
+  .search-bar-container {
+    top: 80px;
+  }
+
+  .container {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 20px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: 1px solid rgba(168, 85, 247, 0.55);
+  background: linear-gradient(135deg, rgba(111, 66, 193, 0.22), rgba(79, 70, 229, 0.35));
+  backdrop-filter: blur(8px);
+  color: #e9d5ff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.18), inset 0 0 12px rgba(168, 85, 247, 0.08);
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.38), rgba(109, 40, 217, 0.5));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.35), inset 0 0 16px rgba(168, 85, 247, 0.12);
+}
+
+.back-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.back-btn:hover svg {
+  transform: translateX(-4px);
+}
+
+body.light-mode .back-btn {
+  background: #7c3aed;
+  border-color: #7c3aed;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+}
+
+body.light-mode .back-btn:hover {
+  background: #6d28d9;
+  box-shadow: 0 8px 24px rgba(109, 40, 217, 0.4);
+}
+
+/* ===== MOBILE IMAGE HEIGHT ===== */
+@media (max-width: 767px) {
+  .card-image img {
+    height: 260px;
+  }
+}
+
+/* ===== TABLET (768px - 1024px) ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 90px 20px 100px;
+  }
+
+  .card-image img {
+    height: 300px;
+  }
+
+  .card-caption h2 {
+    font-size: 1.25rem;
+  }
+
+  /* En tablets la tarjeta span no se centra igual */
+  .card-span {
+    grid-column: span 2;
+    justify-self: center;
+    width: calc(50% - 12px);
+  }
+}
+
+/* ===== PANTALLAS MUY PEQUEÑAS (<380px) ===== */
+@media (max-width: 380px) {
+  .card-button {
+    padding: 12px 16px;
+    font-size: 0.8rem;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .card-body h3 {
+    font-size: 1rem;
+  }
 }
