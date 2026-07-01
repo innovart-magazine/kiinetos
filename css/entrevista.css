@@ -500,7 +500,7 @@ body.light-mode .back-btn:hover {
 /* ===== MOBILE IMAGE HEIGHT ===== */
 @media (max-width: 767px) {
   .card-image img {
-    height: 220px;
+    height: 340px;
   }
 }
 

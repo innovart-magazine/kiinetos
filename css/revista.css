@@ -436,37 +436,77 @@
 
   /* ========== MOBILE ========== */
   @media (max-width: 480px) {
-    .navbar-center {
-      font-size: 16px;
-      letter-spacing: 3px;
+    .navbar {
+      height: 60px;
+      padding: 0 16px;
     }
 
-    .cover-topics {
-      flex-wrap: wrap;
+    .navbar-logo {
+      height: 42px;
     }
 
-    .topic-item {
-      min-width: 50%;
-      border-right: none;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .topic-item:last-child {
-      border-bottom: none;
-    }
-
-    /* Navbar: ocultar el texto central en pantallas muy pequeñas para evitar solapamiento */
     .navbar-center {
       display: none;
     }
 
-    /* Ajustar padding de portada en móvil */
     .cover-wrapper {
-      padding: 75px 12px 40px;
+      padding: 70px 12px 20px;
+    }
+
+    .cover-topbar {
+      padding: 12px 16px 8px;
     }
 
     .cover-logo-name {
-      font-size: clamp(34px, 9vw, 48px);
+      font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .cover-hero {
+      height: clamp(160px, 28vh, 220px);
+    }
+
+    .cover-headline {
+      padding: 14px 16px 12px;
+    }
+
+    .cover-headline h2 {
+      font-size: 16px;
+    }
+
+    .cover-headline p {
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .cover-topics {
+      flex-wrap: nowrap;
+    }
+
+    .topic-item {
+      min-width: 0;
+      padding: 8px 4px;
+      border-right: 1px solid var(--border);
+      border-bottom: none;
+    }
+
+    .topic-item:last-child {
+      border-right: none;
+    }
+
+    .topic-icon {
+      font-size: 18px;
+    }
+
+    .topic-label {
+      font-size: 8px;
+    }
+
+    .topic-desc {
+      font-size: 7.5px;
+    }
+
+    .cover-cta {
+      padding: 12px 16px;
     }
 
     .btn-entrevistas {
