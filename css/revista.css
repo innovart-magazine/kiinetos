@@ -437,12 +437,12 @@
   /* ========== MOBILE ========== */
   @media (max-width: 480px) {
     .navbar {
-      height: 60px;
+      height: 70px;
       padding: 0 16px;
     }
 
     .navbar-logo {
-      height: 42px;
+      height: 56px;
     }
 
     .navbar-center {
@@ -450,7 +450,16 @@
     }
 
     .cover-wrapper {
-      padding: 70px 12px 20px;
+      height: 100vh;
+      height: 100dvh;
+      padding: 82px 12px 52px;
+      align-items: stretch;
+    }
+
+    .cover {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .cover-topbar {
@@ -462,7 +471,8 @@
     }
 
     .cover-hero {
-      height: clamp(160px, 28vh, 220px);
+      flex: 1;
+      height: auto;
     }
 
     .cover-headline {

@@ -13,6 +13,7 @@ body {
   background: #0b0b0b;
   color: #fff;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -660,7 +661,8 @@ body.light-mode .lista-beneficios li strong {
    En desktop se sobreescribe por el @media (min-width: 769px) al final del archivo. */
 .article-view {
   top: 60px;
-  height: calc(100vh - 100px);
+  height: calc(100% - 100px);
+  height: calc(100dvh - 100px);
 }
 
 /* Drop cap: desactivar en pantallas muy pequeñas (<360px) para evitar artefactos */
@@ -724,10 +726,10 @@ body.light-mode .lista-beneficios li strong {
     font-size: 12px;
   }
 
-  /* Ajustar article-view para el navbar más alto en desktop */
   .article-view {
     top: 70px;
-    height: calc(100vh - 114px); /* 70px nav + 44px footer */
+    height: calc(100vh - 114px);
+    height: calc(100dvh - 114px);
   }
 
   /* Subir los botones de paginación para que no queden tapados por el footer más alto */
