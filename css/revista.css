@@ -296,6 +296,27 @@
     color: var(--text-muted);
   }
 
+  /* ------ Typewriter Effect ------ */
+  .typewriter-text {
+    color: var(--accent2);
+    font-weight: 700;
+  }
+
+  .typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background-color: var(--accent2);
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: blink 0.75s step-end infinite;
+  }
+
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
   /* ------ CTA Button ------ */
   .cover-cta {
     padding: 14px 22px 18px;

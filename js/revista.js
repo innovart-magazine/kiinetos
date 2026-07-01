@@ -50,6 +50,50 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.opacity = "0";
     setTimeout(function () { window.location.href = href; }, 520);
   });
+
+  // Typewriter Effect
+  const twText = document.querySelector('.typewriter-text');
+  if (twText) {
+    const phrases = [
+      "capturar las ideas en movimiento.",
+      "proyectar el increíble potencial que nos rodea.",
+      "ser una ventana hacia las nuevas tendencias.",
+      "contar las historias que inspiran acción."
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 60;
+
+    function typeWriter() {
+      const currentPhrase = phrases[phraseIndex];
+      
+      if (isDeleting) {
+        twText.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+        typingSpeed = 25; // Faster when deleting
+      } else {
+        twText.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+        typingSpeed = 60; // Normal typing speed
+      }
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        // Pause at the end of phrase
+        typingSpeed = 2200;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        typingSpeed = 600; // Pause before starting next phrase
+      }
+
+      setTimeout(typeWriter, typingSpeed);
+    }
+
+    // Start effect after a small delay
+    setTimeout(typeWriter, 1200);
+  }
 });
 
 // Manejo de la caché de retroceso (bfcache) para evitar pantalla negra
