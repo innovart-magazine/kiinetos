@@ -125,14 +125,14 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 100px 16px 60px;
+    padding: 90px 16px 40px;
   }
 
   .cover {
     position: relative;
     width: 100%;
-    max-width: 560px;
-    border-radius: 24px;
+    max-width: 500px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow:
       0 0 0 2px var(--border),
@@ -222,7 +222,7 @@
   .cover-hero {
     position: relative;
     width: 100%;
-    height: clamp(260px, 50vw, 380px);
+    height: clamp(220px, 40vh, 320px);
     overflow: hidden;
   }
 
@@ -290,7 +290,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 14px 10px;
+    padding: 12px 8px;
     gap: 6px;
     border-right: 1px solid var(--border);
   }
@@ -325,7 +325,7 @@
 
   /* ------ CTA Button ------ */
   .cover-cta {
-    padding: 18px 22px 22px;
+    padding: 14px 22px 18px;
     display: flex;
     justify-content: center;
     background: var(--card-bg);
@@ -334,9 +334,9 @@
   .btn-entrevistas {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 32px;
-    border-radius: 14px;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 12px;
     background: linear-gradient(135deg, #7c3aed, #a855f7);
     color: #ffffff;
     font-family: "Raleway", sans-serif;
@@ -462,16 +462,16 @@
 
     /* Ajustar padding de portada en móvil */
     .cover-wrapper {
-      padding: 80px 12px 50px;
+      padding: 75px 12px 40px;
     }
 
     .cover-logo-name {
-      font-size: clamp(38px, 10vw, 56px);
+      font-size: clamp(34px, 9vw, 48px);
     }
 
     .btn-entrevistas {
-      padding: 12px 20px;
-      font-size: 12px;
+      padding: 10px 18px;
+      font-size: 11px;
     }
   }
 
@@ -502,10 +502,9 @@
   }
 
   .navbar-logo {
-    height: 82px;
+    height: 52px;
     width: auto;
-    margin-top: 25px;
     object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
   }

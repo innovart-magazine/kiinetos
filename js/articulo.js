@@ -33,7 +33,26 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nextBtn) nextBtn.disabled = currentPageIndex === totalPages - 1;
     }
 
+    // Ocultar nav-pages al hacer scroll vertical en las páginas
+    const navPages = document.querySelector('.nav-pages');
+    let scrollTimeout;
+
     if (container) {
+        const pages = container.querySelectorAll('.page');
+        pages.forEach(page => {
+            page.addEventListener('scroll', () => {
+                if (navPages) {
+                    navPages.style.opacity = '0';
+                    navPages.style.pointerEvents = 'none';
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        navPages.style.opacity = '';
+                        navPages.style.pointerEvents = '';
+                    }, 400);
+                }
+            }, { passive: true });
+        });
+
         container.addEventListener('scroll', updateIndicator);
         // Actualizar al cargar y al cambiar tamaño
         window.addEventListener('resize', updateIndicator);

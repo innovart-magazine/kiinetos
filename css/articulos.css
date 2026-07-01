@@ -100,6 +100,7 @@ body {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   background: #0b0b0b;
+  -webkit-overflow-scrolling: touch;
   /* Ocultar scrollbar horizontal manteniendo funcionalidad de scroll */
   scrollbar-width: none;        /* Firefox */
   -ms-overflow-style: none;     /* IE / Edge legacy */
@@ -114,6 +115,7 @@ body {
   flex: 0 0 100%;
   height: 100%;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 3rem 3rem 4rem;
   background: #0f0f0f;
   display: flex;
@@ -160,12 +162,12 @@ body {
   margin: 0 auto;
   width: 100%;
   color: #e0e0e0;
-  font-size: 1.05rem;
-  line-height: 1.85;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .page-content h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 1.2rem;
@@ -185,7 +187,7 @@ body {
 /* Drop cap: primera letra del primer párrafo real de cada página */
 .page-content p:not(.byline):first-of-type::first-letter {
   float: left;
-  font-size: 3.4rem;
+  font-size: 3rem;
   font-weight: 800;
   line-height: 0.8;
   margin-right: 0.12em;
@@ -506,10 +508,10 @@ body.light-mode .nav-pages button:hover {
 }
 
 .nav-pages button {
-  font-size: 32px !important;
-  padding: 10px 24px !important;
-  min-width: 60px;
-  min-height: 60px;
+  font-size: 24px !important;
+  padding: 6px 16px !important;
+  min-width: 44px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -521,13 +523,13 @@ body.light-mode .nav-pages button:hover {
     transform: translateX(-50%);
     right: auto;
     bottom: 50px;
-    /* En móvil táctil siempre visible — no hay hover */
-    opacity: 1;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
   }
 
   /* Ajuste de márgenes y texto para celulares */
   .page {
-    padding: 1.5rem 1.25rem 90px;
+    padding: 1.5rem 1.25rem 120px;
   }
 
   .page-content h2 {
@@ -558,12 +560,12 @@ body.light-mode .nav-pages button:hover {
 
   /* Ajuste de font-size y drop cap en móvil */
   .page-content {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 
   .page-content p:not(.byline):first-of-type::first-letter {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
     margin-right: 0.1em;
   }
 }
@@ -686,49 +688,49 @@ body.light-mode .lista-beneficios li strong {
 /* ===== DESKTOP NAVBAR & FOOTER LARGER ===== */
 @media (min-width: 769px) {
   .global-navbar {
-    height: 80px;
-    padding: 0 40px;
+    height: 70px;
+    padding: 0 30px;
   }
 
   .nav-brand-title {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .nav-brand-sub {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .nav-center-link {
-    font-size: 26px;
-    letter-spacing: 5px;
+    font-size: 22px;
+    letter-spacing: 4px;
   }
 
   .theme-toggle {
-    padding: 6px 16px;
-    font-size: 13px;
+    padding: 6px 14px;
+    font-size: 12px;
   }
 
   .theme-label {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .nav-search-btn {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .global-footer {
-    height: 52px;
-    font-size: 14px;
+    height: 44px;
+    font-size: 12px;
   }
 
   /* Ajustar article-view para el navbar más alto en desktop */
   .article-view {
-    top: 80px;
-    height: calc(100vh - 132px); /* 80px nav + 52px footer */
+    top: 70px;
+    height: calc(100vh - 114px); /* 70px nav + 44px footer */
   }
 
   /* Subir los botones de paginación para que no queden tapados por el footer más alto */
   .nav-pages {
-    bottom: 68px;
+    bottom: 60px;
   }
 }
