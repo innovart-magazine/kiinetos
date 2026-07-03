@@ -161,14 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (content) {
                     content.style.maxHeight = null;
                     
-                    // Pausar el iframe quitando y poniendo el src si se cierra
-                    // Esto detiene el video de drive automáticamente
-                    const iframe = content.querySelector('iframe');
-                    if(iframe && iframe.src) {
-                        const tempSrc = iframe.src;
-                        iframe.src = '';
-                        iframe.src = tempSrc;
-                    }
+
                 }
             });
             
@@ -188,5 +181,54 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.accordion-item.active .accordion-content').forEach(content => {
             content.style.maxHeight = content.scrollHeight + "px";
         });
+    });
+});
+// ===== CONTROL DEL MODAL DE VIDEO =====
+document.addEventListener('DOMContentLoaded', function() {
+    const videoModal = document.getElementById('videoModal');
+    if (!videoModal) return;
+    
+    const closeBtn = document.getElementById('closeVideoModal');
+    const modalContent = document.getElementById('videoModalContent');
+    const thumbnailContainers = document.querySelectorAll('.video-thumbnail-container');
+
+    function openModal(src) {
+        document.body.classList.add('modal-open');
+        
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.allow = "autoplay; fullscreen";
+        iframe.allowFullscreen = true;
+        
+        modalContent.innerHTML = '';
+        modalContent.appendChild(iframe);
+        
+        videoModal.classList.add('show');
+    }
+
+    function closeModal() {
+        videoModal.classList.remove('show');
+        document.body.classList.remove('modal-open');
+        
+        setTimeout(() => {
+            modalContent.innerHTML = '';
+        }, 300);
+    }
+
+    thumbnailContainers.forEach(container => {
+        container.addEventListener('click', () => {
+            const src = container.getAttribute('data-video-src');
+            if (src) {
+                openModal(src.trim());
+            }
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+            closeModal();
+        }
     });
 });
