@@ -143,3 +143,50 @@ window.addEventListener('pageshow', function (event) {
         document.body.style.transform = 'none';
     }
 });
+
+// ===== ACORDEÓN DE VIDEOS =====
+document.addEventListener('DOMContentLoaded', function() {
+    const accordions = document.querySelectorAll('.accordion-item');
+    
+    accordions.forEach(acc => {
+        const header = acc.querySelector('.accordion-header');
+        
+        header.addEventListener('click', () => {
+            const isActive = acc.classList.contains('active');
+            
+            // Cerrar todos los acordeones (Efecto exclusivo)
+            accordions.forEach(item => {
+                item.classList.remove('active');
+                const content = item.querySelector('.accordion-content');
+                if (content) {
+                    content.style.maxHeight = null;
+                    
+                    // Pausar el iframe quitando y poniendo el src si se cierra
+                    // Esto detiene el video de drive automáticamente
+                    const iframe = content.querySelector('iframe');
+                    if(iframe && iframe.src) {
+                        const tempSrc = iframe.src;
+                        iframe.src = '';
+                        iframe.src = tempSrc;
+                    }
+                }
+            });
+            
+            // Si el actual no estaba activo, abrirlo
+            if (!isActive) {
+                acc.classList.add('active');
+                const content = acc.querySelector('.accordion-content');
+                if (content) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            }
+        });
+    });
+
+    // Ajustar max-height si cambia el tamaño de la ventana
+    window.addEventListener('resize', () => {
+        document.querySelectorAll('.accordion-item.active .accordion-content').forEach(content => {
+            content.style.maxHeight = content.scrollHeight + "px";
+        });
+    });
+});
