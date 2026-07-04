@@ -204,15 +204,26 @@ document.addEventListener('DOMContentLoaded', function() {
         modalContent.appendChild(iframe);
         
         videoModal.classList.add('show');
+        
+        // Agrega un nuevo estado al historial para interceptar el gesto de retroceso
+        history.pushState({ modalOpen: true }, '');
     }
 
-    function closeModal() {
+    function closeModal(isPopstate) {
+        if (!videoModal.classList.contains('show')) return;
+
         videoModal.classList.remove('show');
         document.body.classList.remove('modal-open');
         
         setTimeout(() => {
             modalContent.innerHTML = '';
         }, 300);
+
+        // Si se cierra con la X o clic afuera, retrocedemos manualmente para limpiar el historial
+        // Solo si no fue disparado por el gesto de retroceso (popstate)
+        if (!isPopstate && history.state && history.state.modalOpen) {
+            history.back();
+        }
     }
 
     thumbnailContainers.forEach(container => {
@@ -224,11 +235,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    closeBtn.addEventListener('click', closeModal);
+    closeBtn.addEventListener('click', () => closeModal(false));
 
     videoModal.addEventListener('click', (e) => {
         if (e.target === videoModal) {
-            closeModal();
+            closeModal(false);
+        }
+    });
+
+    // Intercepta el gesto de retroceso o botón de atrás
+    window.addEventListener('popstate', (e) => {
+        if (videoModal.classList.contains('show')) {
+            // El usuario usó el gesto de retroceso, solo cerramos el modal
+            closeModal(true);
         }
     });
 });
