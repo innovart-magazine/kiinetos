@@ -1923,3 +1923,43 @@ body.light-mode .carousel-nav-btn:hover , html.light-mode body .carousel-nav-btn
   font-weight: 500;
   color: #e9d5ff;
 }
+
+
+/* --- REGLAS RESPONSIVAS Y CORRECCIÓN DE DESBORDAMIENTO --- */
+@media (max-width: 768px) {
+  /* 1. Reparación del Carrusel */
+  #carousel-inye, .carousel-prim, .carousel-container {
+    width: 100%;
+    overflow: hidden; /* Corta el excedente horizontal */
+  }
+  
+  #carousel-track {
+    width: 100%;
+  }
+
+  .carousel-slide {
+    flex: 0 0 100% !important; 
+    width: 100% !important;
+    min-width: 0 !important; /* Elimina min-width solitarios que rompan flexbox */
+  }
+
+  /* 2. Contención de Imágenes */
+  img, .post-image, .info-section img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* 3. Gráficas de Chart.js y Textos Flexbox */
+  .chart-container {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .comment-content {
+    min-width: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
