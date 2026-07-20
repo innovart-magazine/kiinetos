@@ -14,6 +14,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
     rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -60,7 +61,7 @@
     <div class="pages-container">
       <!-- Página 1 -->
       <div class="page">
-        <div class="page-number">Página 1 de 3</div>
+        <div class="page-number">Página 1 de 2</div>
         <div class="page-content">
           <h2>Primeros Auxilios: <span class="highlight">La diferencia entre la vida y la muerte</span></h2>
 
@@ -269,21 +270,26 @@
                     </ul>
 
                     <div style="margin-top: 25px;">
-                      <a href="https://www.youtube.com/watch?v=FvqMWfo0Hbs" target="_blank" rel="noopener noreferrer"
-                        style="display: block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer;">
+                      <div onclick="openVideoModal('FvqMWfo0Hbs')"
+                        class="video-thumb-container">
                         <img src="https://img.youtube.com/vi/FvqMWfo0Hbs/hqdefault.jpg" alt="Ver video: Técnica de RCP"
-                          style="width: 100%; display: block; border-radius: 12px;">
-                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); border-radius: 12px;">
-                          <div style="width: 64px; height: 64px; background: #ff0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28" style="margin-left: 4px;">
-                              <path d="M8 5v14l11-7z"/>
+                          class="video-thumb-img">
+                        <div
+                          class="video-thumb-overlay">
+                          <div
+                            class="video-thumb-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28"
+                              height="28" style="margin-left: 4px;">
+                              <path d="M8 5v14l11-7z" />
                             </svg>
                           </div>
                         </div>
-                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 15px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); border-radius: 0 0 12px 12px;">
-                          <p style="margin: 0; color: #fff; font-size: 0.9rem; font-weight: 500;">Ver en YouTube: Técnica de RCP ↗</p>
+                        <div
+                          class="video-thumb-title-container">
+                          <p class="video-thumb-title">Reproducir video:
+                            Técnica de RCP ▶</p>
                         </div>
-                      </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -315,21 +321,27 @@
                     </ul>
 
                     <div style="margin-top: 25px;">
-                      <a href="https://www.youtube.com/watch?v=CsMfu8Iuvgc" target="_blank" rel="noopener noreferrer"
-                        style="display: block; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer;">
-                        <img src="https://img.youtube.com/vi/CsMfu8Iuvgc/hqdefault.jpg" alt="Ver video: Maniobra de Heimlich"
-                          style="width: 100%; display: block; border-radius: 12px;">
-                        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); border-radius: 12px;">
-                          <div style="width: 64px; height: 64px; background: #ff0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28" height="28" style="margin-left: 4px;">
-                              <path d="M8 5v14l11-7z"/>
+                      <div onclick="openVideoModal('CsMfu8Iuvgc')"
+                        class="video-thumb-container">
+                        <img src="https://img.youtube.com/vi/CsMfu8Iuvgc/hqdefault.jpg"
+                          alt="Ver video: Maniobra de Heimlich"
+                          class="video-thumb-img">
+                        <div
+                          class="video-thumb-overlay">
+                          <div
+                            class="video-thumb-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="28"
+                              height="28" style="margin-left: 4px;">
+                              <path d="M8 5v14l11-7z" />
                             </svg>
                           </div>
                         </div>
-                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 15px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); border-radius: 0 0 12px 12px;">
-                          <p style="margin: 0; color: #fff; font-size: 0.9rem; font-weight: 500;">Ver en YouTube: Maniobra de Heimlich ↗</p>
+                        <div
+                          class="video-thumb-title-container">
+                          <p class="video-thumb-title">Reproducir video:
+                            Maniobra de Heimlich ▶</p>
                         </div>
-                      </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -339,6 +351,161 @@
 
           <div class="quote">"Saber qué hacer en los primeros minutos de una emergencia es el mejor regalo que
             puedes darle a alguien que amas."</div>
+        </div>
+      </div>
+
+      <!-- Página 2: Resultados -->
+      <div class="page">
+        <div class="social-post-container">
+          <div class="post-header">
+            <div class="profile-pic">SQ</div>
+            <div class="post-info">
+              <h3 class="author-name">Sara Quintana</h3>
+              <p class="author-role">TSU en Seguridad Industrial | Ponente Innovart</p>
+            </div>
+          </div>
+
+          <div class="post-content">
+            <p class="post-caption">Resultados y feedback de la capacitación en
+              <strong>Primeros Auxilios</strong>. 📊💬
+            </p>
+
+            <!-- Carrusel estilo Instagram -->
+            <div id="carousel-prim"
+              class="carousel-prim">
+
+              <!-- Slides -->
+              <div id="carousel-track" style="display: flex; transition: transform 0.45s cubic-bezier(.77,0,.18,1);">
+
+                <!-- Slide 1: Gráfica 1 -->
+                <div class="carousel-slide" style="min-width: 100%; box-sizing: border-box; padding: 12px;">
+                  <div
+                    class="carousel-slide-inner">
+                    <p
+                      class="chart-title">
+                      ¿Cuál de las técnicas apredidas considera que tuvo mayor impacto en su aprendizaje?</p>
+                    <div class="chart-container">
+                      <canvas id="chart1"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 2: Gráfica 2 -->
+                <div class="carousel-slide" style="min-width: 100%; box-sizing: border-box; padding: 12px;">
+                  <div
+                    class="carousel-slide-inner">
+                    <p
+                      class="chart-title">
+                      ¿Consideras que el conocimiento adquirido en primeros auxilios es una herramienta esencial para tu
+                      vida diaria y entorno universitario?</p>
+                    <div class="chart-container">
+                      <canvas id="chart2"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Slide 3: Testimonios -->
+                <div class="carousel-slide" style="min-width: 100%; box-sizing: border-box; padding: 12px;">
+                  <div
+                    class="carousel-slide-inner">
+                    <p
+                      class="chart-title" style="margin-bottom: 24px;">
+                      ¿Qué fue lo más valioso o la mayor enseñanza que te dejó esta jornada con
+                      Protección Civil?</p>
+
+                    <div style="max-height: 280px; overflow-y: auto; padding-right: 8px;">
+                      <div class="comment-box">
+                        <div class="comment-avatar" style="background: linear-gradient(135deg, #7c3aed, #db2777);">👤</div>
+                        <div class="comment-content">
+                          <p class="comment-author">Miembro del Equipo</p>
+                          <p class="comment-text">Concientizar que los primeros auxilios son vitales y que una respuesta rápida puede salvar vidas en el día a día o en la universidad.</p>
+                          <div class="social-buttons">
+                            <span class="social-btn like">
+                              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                              Me gusta
+                            </span>
+                            <span class="social-btn repost">
+                              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4 7.58 4 4 7.58 4 12H1l4 4 4-4H6z"/></svg>
+                              Repostear
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="comment-box">
+                        <div class="comment-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">👤</div>
+                        <div class="comment-content">
+                          <p class="comment-author">Miembro del Equipo</p>
+                          <p class="comment-text">La importancia de tener conocimientos previos ante una emergencia.</p>
+                          <div class="social-buttons">
+                            <span class="social-btn like">
+                              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                              Me gusta
+                            </span>
+                            <span class="social-btn repost">
+                              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4 7.58 4 4 7.58 4 12H1l4 4 4-4H6z"/></svg>
+                              Repostear
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="comment-box">
+                        <div class="comment-avatar" style="background: linear-gradient(135deg, #10b981, #3b82f6);">👤</div>
+                        <div class="comment-content">
+                          <p class="comment-author">Miembro del Equipo</p>
+                          <p class="comment-text">Cualquier acción por más pequeña que sea puede salvar la vida de alguien.</p>
+                          <div class="social-buttons">
+                            <span class="social-btn like">
+                              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                              Me gusta
+                            </span>
+                            <span class="social-btn repost">
+                              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4 7.58 4 4 7.58 4 12H1l4 4 4-4H6z"/></svg>
+                              Repostear
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="comment-box">
+                        <div class="comment-avatar" style="background: linear-gradient(135deg, #059669, #2563eb);">👤</div>
+                        <div class="comment-content">
+                          <p class="comment-author">Miembro del Equipo</p>
+                          <p class="comment-text">Me gustó mucho el refrescar los conocimientos básicos, ya que mi padre trabaja en esa rama y creo que es fundamental reforzar los conocimientos para que al momento de cualquier situación sepamos cómo actuar y no quedarnos bloqueados.</p>
+                          <div class="social-buttons">
+                            <span class="social-btn like">
+                              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                              Me gusta
+                            </span>
+                            <span class="social-btn repost">
+                              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4 7.58 4 4 7.58 4 12H1l4 4 4-4H6z"/></svg>
+                              Repostear
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Botón prev -->
+              <button id="carousel-prev" onclick="moveCarousel(-1)" class="carousel-nav-btn prev" aria-label="Anterior">‹</button>
+
+              <!-- Botón next -->
+              <button id="carousel-next" onclick="moveCarousel(1)" class="carousel-nav-btn next" aria-label="Siguiente">›</button>
+            </div>
+
+            <div id="carousel-dots" style="display: flex; justify-content: center; gap: 6px; margin-bottom: 18px;">
+              <span class="cdot"
+                style="width: 8px; height: 8px; border-radius: 50%; background: #7c3aed; display: inline-block; transition: background 0.3s;"></span>
+              <span class="cdot"
+                style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); display: inline-block; transition: background 0.3s;"></span>
+              <span class="cdot"
+                style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); display: inline-block; transition: background 0.3s;"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -351,6 +518,142 @@
   </div>
 
   <script src="../js/articulo.js" defer></script>
+
+  <script>
+    let carouselIndex = 0;
+    const totalSlides = 3;
+
+    function moveCarousel(dir) {
+      carouselIndex = (carouselIndex + dir + totalSlides) % totalSlides;
+      const track = document.getElementById('carousel-track');
+      if (track) {
+        track.style.transform = `translateX(-${carouselIndex * 100}%)`;
+      }
+      const dots = document.querySelectorAll('.cdot');
+      dots.forEach((d, i) => {
+        d.style.background = i === carouselIndex ? '#7c3aed' : 'rgba(255,255,255,0.25)';
+      });
+      const prev = document.getElementById('carousel-prev');
+      const next = document.getElementById('carousel-next');
+      if (prev) prev.style.opacity = carouselIndex === 0 ? '0.3' : '1';
+      if (next) next.style.opacity = carouselIndex === totalSlides - 1 ? '0.3' : '1';
+
+      if (window.chartsPrim && window.chartsPrim[carouselIndex]) {
+        window.chartsPrim[carouselIndex].reset();
+        window.chartsPrim[carouselIndex].update();
+      }
+    }
+
+    (function () {
+      const track = document.getElementById('carousel-prim');
+      if (!track) return;
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) moveCarousel(diff > 0 ? 1 : -1);
+      });
+    })();
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+      Chart.defaults.color = '#e2e8f0';
+      Chart.defaults.font.family = 'Inter';
+
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: {
+          animateRotate: true,
+          animateScale: true,
+          duration: 1500,
+          easing: 'easeOutQuart'
+        },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { color: '#e2e8f0', padding: 15, font: { size: 11 } }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(20, 20, 30, 0.9)',
+            titleColor: '#e2e8f0',
+            bodyColor: '#e2e8f0',
+            borderColor: 'rgba(124, 58, 237, 0.3)',
+            borderWidth: 1,
+            padding: 10,
+            cornerRadius: 8,
+            displayColors: true,
+            callbacks: {
+              label: function (context) {
+                let label = context.label || '';
+                if (label) label += ': ';
+                if (context.parsed !== null) label += context.parsed + '%';
+                return label;
+              }
+            }
+          }
+        }
+      };
+
+      window.chartsPrim = [];
+
+      // Gráfica 1
+      const ctx1 = document.getElementById('chart1').getContext('2d');
+      window.chartsPrim[0] = new Chart(ctx1, {
+        type: 'doughnut',
+        data: {
+          labels: ['Excelente', 'Buena', 'Regular', 'Mala'],
+          datasets: [{
+            data: [85.5, 14.5, 0, 0],
+            backgroundColor: ['#8b5cf6', '#38bdf8', '#f43f5e', '#10b981'],
+            borderWidth: 0,
+            hoverOffset: 6
+          }]
+        },
+        options: Object.assign({}, chartOptions, { cutout: '65%' })
+      });
+
+      // Gráfica 2
+      const ctx2 = document.getElementById('chart2').getContext('2d');
+      window.chartsPrim[1] = new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+          labels: ['Excelente', 'Buena', 'Regular', 'Mala'],
+          datasets: [{
+            data: [70.0, 30.0, 0, 0],
+            backgroundColor: ['#8b5cf6', '#38bdf8', '#f43f5e', '#10b981'],
+            borderWidth: 0,
+            hoverOffset: 6
+          }]
+        },
+        options: Object.assign({}, chartOptions, { cutout: '65%' })
+      });
+    });
+  </script>
+
+  <div id="videoModal" class="modal-overlay">
+    <div class="modal-content">
+      <button onclick="closeVideoModal()" class="modal-close">&times;</button>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px;">
+        <iframe id="videoIframe" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openVideoModal(videoId) {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('videoIframe');
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      modal.style.display = 'flex';
+    }
+    function closeVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const iframe = document.getElementById('videoIframe');
+      iframe.src = '';
+      modal.style.display = 'none';
+    }
+  </script>
 
   <footer class="global-footer">
     Desarrollado por Innovart &nbsp;-&nbsp; <span>Kinetos <span id="currentYear">2026</span></span>

@@ -214,6 +214,18 @@ body.light-mode .canva-text {
   color: #ffffff !important;
 }
 
+body.light-mode .bg-black\/40 {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-color: #7c3aed !important;
+}
+body.light-mode .text-gray-300 {
+  color: #4b4b4b !important;
+}
+body.light-mode .text-gray-300:hover {
+  color: #000 !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
 /* ===== NAVBAR ===== */
 .global-navbar {
   position: fixed;

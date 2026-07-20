@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -132,15 +133,14 @@
                         <div class="info-section">
                             <h4>Preparación de Material y Ampollas</h4>
 
-                            <div
-                                style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-bottom: 25px;">
-                                <div style="flex: 1; min-width: 250px;">
+                            <div class="material-prep-container">
+                                <div class="material-prep-image">
                                     <img src="../img-cap/image copy 3.png" alt="Material de preparación"
-                                        class="post-image" style="margin: 0; width: 100%; object-fit: cover;">
+                                        class="post-image-small">
                                 </div>
-                                <div style="flex: 1.2; min-width: 300px;">
+                                <div class="material-prep-list">
                                     <p><strong>Checklist obligatorio del set de inyección:</strong></p>
-                                    <ul class="lista-beneficios" style="margin-bottom: 0;">
+                                    <ul class="lista-beneficios">
                                         <li>Guantes de nitrilo.</li>
                                         <li>Algodón o gasas junto a <strong>alcohol al 70%</strong>.</li>
                                         <li>Jeringas y agujas estériles del calibre requerido.</li>
@@ -308,21 +308,6 @@
 
                     </div>
 
-                    <div class="post-stats">
-                        <div class="stat-item">
-                            <span class="stat-icon">⭐</span>
-                            <div class="stat-text">
-                                <strong>81.8%</strong> calificó la charla como <em>Excelente</em>.
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-icon">⏱️</span>
-                            <div class="stat-text">
-                                <strong>72.7%</strong> consideró que el tiempo fue el <em>adecuado</em>.
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div><!-- /page 1 -->
 
@@ -344,7 +329,7 @@
 
                         <!-- Carrusel estilo Instagram -->
                         <div id="carousel-inye"
-                            style="position: relative; overflow: hidden; border-radius: 14px; background: #0d0d1a; margin-bottom: 10px;">
+                            class="carousel-prim">
 
                             <!-- Slides -->
                             <div id="carousel-track"
@@ -354,12 +339,14 @@
                                 <div class="carousel-slide"
                                     style="min-width: 100%; box-sizing: border-box; padding: 12px;">
                                     <div
-                                        style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; text-align: center;">
+                                        class="carousel-slide-inner">
                                         <p
-                                            style="font-size: 0.75rem; color: #a78bfa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; font-weight: 600;">
-                                            Gráfica 1 de 3</p>
-                                        <img src="../img-cap/QI1.png" alt="Gráfica de resultados 1"
-                                            style="width: 100%; height: auto; border-radius: 8px; display: block;">
+                                            class="chart-title">
+                                            ¿Cómo calificarías de forma general la charla sobre inyección?
+                                        </p>
+                                        <div class="chart-container">
+                                            <canvas id="chart1"></canvas>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -367,135 +354,165 @@
                                 <div class="carousel-slide"
                                     style="min-width: 100%; box-sizing: border-box; padding: 12px;">
                                     <div
-                                        style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; text-align: center;">
+                                        class="carousel-slide-inner">
                                         <p
-                                            style="font-size: 0.75rem; color: #a78bfa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; font-weight: 600;">
-                                            Gráfica 2 de 3</p>
-                                        <img src="../img-cap/QI3.png" alt="Gráfica de resultados 2"
-                                            style="width: 100%; height: auto; border-radius: 8px; display: block;">
+                                            class="chart-title">
+                                            Del 1 al 5 (donde 1 es "Nada Productiva" y es "Altamente Productiva"),
+                                            ¿Cómo evaluariás la utilidad de la charla para tu formación?
+                                        </p>
+                                        <div class="chart-container">
+                                            <canvas id="chart2"></canvas>
+                                        </div>
                                     </div>
                                 </div>
 
-                                <!-- Slide 3: Gráfica QI5 -->
+                                <!-- Slide 3: Gráfica QI5 + Testimonios -->
                                 <div class="carousel-slide"
                                     style="min-width: 100%; box-sizing: border-box; padding: 12px;">
                                     <div
-                                        style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; text-align: center;">
+                                        class="carousel-slide-inner">
                                         <p
-                                            style="font-size: 0.75rem; color: #a78bfa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; font-weight: 600;">
-                                            Gráfica 3 de 3</p>
-                                        <img src="../img-cap/QI5.png" alt="Gráfica de resultados 3"
-                                            style="width: 100%; height: auto; border-radius: 8px; display: block;">
-                                    </div>
-                                </div>
-
-                                <!-- Slide 4: Comentarios estilo redes sociales -->
-                                <div class="carousel-slide"
-                                    style="min-width: 100%; box-sizing: border-box; padding: 12px;">
-                                    <div
-                                        style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px;">
-                                        <p
-                                            style="font-size: 0.75rem; color: #a78bfa; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; font-weight: 600; text-align: center;">
-                                            💬 Comentarios del equipo</p>
-
-                                        <!-- Comentario 1 -->
-                                        <div
-                                            style="display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start;">
-                                            <div
-                                                style="width: 40px; height: 40px; min-width: 40px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #db2777); display: flex; align-items: center; justify-content: center; font-size: 1rem;">
-                                                👤</div>
-                                            <div
-                                                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 0 12px 12px 12px; padding: 12px 14px; flex: 1;">
-                                                <p
-                                                    style="margin: 0 0 4px; font-weight: 700; font-size: 0.85rem; color: #e9d5ff;">
-                                                    Miembro del Equipo</p>
-                                                <p
-                                                    style="margin: 0; font-size: 0.88rem; line-height: 1.5; opacity: 0.9;">
-                                                    "Fue muy satisfactorio estar en la charla porque pude aprender las
-                                                    zonas donde me pueden y puedo aplicar una inyección, así como en qué
-                                                    profundidad debe ser suministrado el medicamento, además del uso
-                                                    adecuado de la jeringa."</p>
-                                                <p style="margin: 6px 0 0; font-size: 0.75rem; color: #a78bfa;">❤️ Me
-                                                    gusta &nbsp;·&nbsp; Responder</p>
-                                            </div>
+                                            class="chart-title">
+                                            ¿En qué medida esta charla aumentó tu nivel de confianza para realizar y
+                                            entender
+                                            un procedimiento de inyección en el futuro
+                                            ? </p>
+                                        <div class="chart-container">
+                                            <canvas id="chart3"></canvas>
                                         </div>
 
-                                        <!-- Comentario 2 -->
-                                        <div
-                                            style="display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start;">
+                                        <button id="toggleCommentsBtn" class="testimonials-btn">💬 Ver respuestas del
+                                            equipo (4)</button>
+
+                                        <div id="commentsSection" class="testimonials-content">
+                                            <!-- Comentario 1 -->
                                             <div
-                                                style="width: 40px; height: 40px; min-width: 40px; border-radius: 50%; background: linear-gradient(135deg, #2563eb, #7c3aed); display: flex; align-items: center; justify-content: center; font-size: 1rem;">
-                                                👤</div>
+                                                class="comment-box">
+                                                <div
+                                                    class="comment-avatar" style="background: linear-gradient(135deg, #7c3aed, #db2777);">
+                                                    👤</div>
+                                                <div
+                                                    class="comment-content">
+                                                    <p
+                                                        class="comment-author">
+                                                        Miembro del Equipo</p>
+                                                    <p
+                                                        class="comment-text">
+                                                        "Fue muy satisfactorio estar en la charla porque pude aprender
+                                                        las zonas donde me pueden y puedo aplicar una inyección, así
+                                                        como en qué profundidad debe ser suministrado el medicamento,
+                                                        además del uso adecuado de la jeringa."</p>
+                                                    <div class="social-buttons">
+                                                        <span class="social-btn like">
+                                                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                                            Me gusta
+                                                        </span>
+                                                        <span class="social-btn repost">
+                                                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4 7.58 4 4 7.58 4 12H1l4 4 4-4H6z"/></svg>
+                                                            Repostear
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Comentario 2 -->
                                             <div
-                                                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 0 12px 12px 12px; padding: 12px 14px; flex: 1;">
-                                                <p
-                                                    style="margin: 0 0 4px; font-weight: 700; font-size: 0.85rem; color: #e9d5ff;">
-                                                    Miembro del Equipo</p>
-                                                <p
-                                                    style="margin: 0; font-size: 0.88rem; line-height: 1.5; opacity: 0.9;">
-                                                    "Podría presentarse una situación de emergencia en la que no haya
-                                                    otra opción y toque hacerse cargo. Antes de la capacitación no
-                                                    hubiera tenido ninguna idea de qué hacer, y después siento que
-                                                    podría ser de mucha utilidad en casos extremos."</p>
-                                                <p style="margin: 6px 0 0; font-size: 0.75rem; color: #a78bfa;">❤️ Me
-                                                    gusta &nbsp;·&nbsp; Responder</p>
+                                                class="comment-box">
+                                                <div
+                                                    class="comment-avatar" style="background: linear-gradient(135deg, #2563eb, #7c3aed);">
+                                                    👤</div>
+                                                <div
+                                                    class="comment-content">
+                                                    <p
+                                                        class="comment-author">
+                                                        Miembro del Equipo</p>
+                                                    <p
+                                                        class="comment-text">
+                                                        "Podría presentarse una situación de emergencia en la que no
+                                                        haya otra opción y toque hacerse cargo. Antes de la capacitación
+                                                        no hubiera tenido ninguna idea de qué hacer, y después siento
+                                                        que podría ser de mucha utilidad en casos extremos."</p>
+                                                    <div class="social-buttons">
+                                                        <span class="social-btn like">
+                                                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                                            Me gusta
+                                                        </span>
+                                                        <span class="social-btn repost">
+                                                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4 7.58 4 4 7.58 4 12H1l4 4 4-4H6z"/></svg>
+                                                            Repostear
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Comentario 3 -->
+                                            <div
+                                                class="comment-box">
+                                                <div
+                                                    class="comment-avatar" style="background: linear-gradient(135deg, #059669, #2563eb);">
+                                                    👤</div>
+                                                <div
+                                                    class="comment-content">
+                                                    <p
+                                                        class="comment-author">
+                                                        Miembro del Equipo</p>
+                                                    <p
+                                                        class="comment-text">
+                                                        "Aporta bastante, porque siempre es importante tener un mínimo
+                                                        de conocimiento ya que uno no sabe qué situación se puede
+                                                        presentar y uno pueda ayudar."</p>
+                                                    <div class="social-buttons">
+                                                        <span class="social-btn like">
+                                                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                                            Me gusta
+                                                        </span>
+                                                        <span class="social-btn repost">
+                                                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4 7.58 4 4 7.58 4 12H1l4 4 4-4H6z"/></svg>
+                                                            Repostear
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Comentario 4 -->
+                                            <div
+                                                class="comment-box">
+                                                <div
+                                                    class="comment-avatar" style="background: linear-gradient(135deg, #d97706, #db2777);">
+                                                    👤</div>
+                                                <div
+                                                    class="comment-content">
+                                                    <p
+                                                        class="comment-author">
+                                                        Miembro del Equipo</p>
+                                                    <p
+                                                        class="comment-text">
+                                                        "Proporciona conocimiento básico y queda claro que sin
+                                                        adiestramiento y capacitación no se deben colocar inyecciones."
+                                                    </p>
+                                                    <div class="social-buttons">
+                                                        <span class="social-btn like">
+                                                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                                            Me gusta
+                                                        </span>
+                                                        <span class="social-btn repost">
+                                                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4 7.58 4 4 7.58 4 12H1l4 4 4-4H6z"/></svg>
+                                                            Repostear
+                                                        </span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-
-                                        <!-- Comentario 3 -->
-                                        <div
-                                            style="display: flex; gap: 12px; margin-bottom: 16px; align-items: flex-start;">
-                                            <div
-                                                style="width: 40px; height: 40px; min-width: 40px; border-radius: 50%; background: linear-gradient(135deg, #059669, #2563eb); display: flex; align-items: center; justify-content: center; font-size: 1rem;">
-                                                👤</div>
-                                            <div
-                                                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 0 12px 12px 12px; padding: 12px 14px; flex: 1;">
-                                                <p
-                                                    style="margin: 0 0 4px; font-weight: 700; font-size: 0.85rem; color: #e9d5ff;">
-                                                    Miembro del Equipo</p>
-                                                <p
-                                                    style="margin: 0; font-size: 0.88rem; line-height: 1.5; opacity: 0.9;">
-                                                    "Aporta bastante, porque siempre es importante tener un mínimo de
-                                                    conocimiento ya que uno no sabe qué situación se puede presentar y
-                                                    uno pueda ayudar."</p>
-                                                <p style="margin: 6px 0 0; font-size: 0.75rem; color: #a78bfa;">❤️ Me
-                                                    gusta &nbsp;·&nbsp; Responder</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Comentario 4 -->
-                                        <div style="display: flex; gap: 12px; align-items: flex-start;">
-                                            <div
-                                                style="width: 40px; height: 40px; min-width: 40px; border-radius: 50%; background: linear-gradient(135deg, #d97706, #db2777); display: flex; align-items: center; justify-content: center; font-size: 1rem;">
-                                                👤</div>
-                                            <div
-                                                style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 0 12px 12px 12px; padding: 12px 14px; flex: 1;">
-                                                <p
-                                                    style="margin: 0 0 4px; font-weight: 700; font-size: 0.85rem; color: #e9d5ff;">
-                                                    Miembro del Equipo</p>
-                                                <p
-                                                    style="margin: 0; font-size: 0.88rem; line-height: 1.5; opacity: 0.9;">
-                                                    "Proporciona conocimiento básico y queda claro que sin
-                                                    adiestramiento y capacitación no se deben colocar inyecciones."</p>
-                                                <p style="margin: 6px 0 0; font-size: 0.75rem; color: #a78bfa;">❤️ Me
-                                                    gusta &nbsp;·&nbsp; Responder</p>
-                                            </div>
-                                        </div>
-
                                     </div>
                                 </div>
 
                             </div><!-- /carousel-track -->
 
                             <!-- Botón prev -->
-                            <button id="carousel-prev" onclick="moveCarousel(-1)"
-                                style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; font-size: 1rem; transition: background 0.2s; z-index: 10;"
-                                aria-label="Anterior">‹</button>
+                            <button id="carousel-prev" onclick="moveCarousel(-1)" class="carousel-nav-btn prev" aria-label="Anterior">‹</button>
 
                             <!-- Botón next -->
-                            <button id="carousel-next" onclick="moveCarousel(1)"
-                                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; font-size: 1rem; transition: background 0.2s; z-index: 10;"
-                                aria-label="Siguiente">›</button>
+                            <button id="carousel-next" onclick="moveCarousel(1)" class="carousel-nav-btn next" aria-label="Siguiente">›</button>
 
                         </div><!-- /carousel -->
 
@@ -504,8 +521,6 @@
                             style="display: flex; justify-content: center; gap: 6px; margin-bottom: 18px;">
                             <span class="cdot"
                                 style="width: 8px; height: 8px; border-radius: 50%; background: #7c3aed; display: inline-block; transition: background 0.3s;"></span>
-                            <span class="cdot"
-                                style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); display: inline-block; transition: background 0.3s;"></span>
                             <span class="cdot"
                                 style="width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); display: inline-block; transition: background 0.3s;"></span>
                             <span class="cdot"
@@ -530,7 +545,7 @@
     <script>
         // ── Carrusel de gráficas ──────────────────────────────────
         let carouselIndex = 0;
-        const totalSlides = 4;
+        const totalSlides = 3;
 
         function moveCarousel(dir) {
             carouselIndex = (carouselIndex + dir + totalSlides) % totalSlides;
@@ -546,6 +561,12 @@
             const next = document.getElementById('carousel-next');
             if (prev) prev.style.opacity = carouselIndex === 0 ? '0.3' : '1';
             if (next) next.style.opacity = carouselIndex === totalSlides - 1 ? '0.3' : '1';
+
+            // Re-animar la gráfica actual al deslizar
+            if (window.chartsInye && window.chartsInye[carouselIndex]) {
+                window.chartsInye[carouselIndex].reset();
+                window.chartsInye[carouselIndex].update();
+            }
         }
 
         // Soporte swipe (táctil)
@@ -563,21 +584,148 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Animación del acordeón
             const toggleBtn = document.getElementById("toggleCommentsBtn");
             const commentsSection = document.getElementById("commentsSection");
 
             if (toggleBtn && commentsSection) {
                 toggleBtn.addEventListener("click", () => {
-                    commentsSection.classList.toggle("hidden");
-                    if (commentsSection.classList.contains("hidden")) {
-                        toggleBtn.textContent = "💬 Ver Feedback del Equipo (4)";
-                    } else {
+                    commentsSection.classList.toggle("open");
+                    if (commentsSection.classList.contains("open")) {
                         toggleBtn.textContent = "💬 Ocultar comentarios";
+                    } else {
+                        toggleBtn.textContent = "💬 Ver respuestas del equipo (4)";
                     }
                 });
             }
+
+            // Configuración de Gráficas Chart.js
+            Chart.defaults.color = '#e2e8f0';
+            Chart.defaults.font.family = 'Inter';
+
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    animateRotate: true,
+                    animateScale: true,
+                    duration: 1500,
+                    easing: 'easeOutQuart'
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            color: '#e2e8f0',
+                            padding: 15,
+                            font: { size: 11 }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(20, 20, 30, 0.9)',
+                        titleColor: '#e2e8f0',
+                        bodyColor: '#e2e8f0',
+                        borderColor: 'rgba(124, 58, 237, 0.3)',
+                        borderWidth: 1,
+                        padding: 10,
+                        cornerRadius: 8,
+                        displayColors: true,
+                        callbacks: {
+                            label: function (context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    if (typeof context.parsed === 'object' && context.parsed.y !== undefined) {
+                                        let total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                        let percentage = total > 0 ? ((context.parsed.y / total) * 100).toFixed(1) : 0;
+                                        label += percentage + '%';
+                                    } else {
+                                        label += context.parsed + '%';
+                                    }
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            };
+
+            window.chartsInye = [];
+
+            // Gráfica 1
+            const ctx1 = document.getElementById('chart1').getContext('2d');
+            window.chartsInye[0] = new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Excelente', 'Buena', 'Regular', 'Mala'],
+                    datasets: [{
+                        data: [81.8, 18.2, 0, 0],
+                        backgroundColor: [
+                            '#8b5cf6', // Excelente (Morado)
+                            '#38bdf8', // Muy buena (Celeste)
+                            '#f43f5e', // Regular (Rosa)
+                            '#10b981'  // Mala (Verde)
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 6
+                    }]
+                },
+                options: Object.assign({}, chartOptions, { cutout: '65%' })
+            });
+
+            // Gráfica 2
+            const ctx2 = document.getElementById('chart2').getContext('2d');
+            window.chartsInye[1] = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['1', '2', '3', '4', '5'],
+                    datasets: [{
+                        label: 'Respuestas',
+                        data: [0, 0, 0, 3, 8],
+                        backgroundColor: '#8b5cf6',
+                        borderWidth: 0,
+                        borderRadius: 6
+                    }]
+                },
+                options: Object.assign({}, chartOptions, {
+                    plugins: Object.assign({}, chartOptions.plugins, { legend: { display: false } }),
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#e2e8f0' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#e2e8f0' }
+                        }
+                    }
+                })
+            });
+
+            // Gráfica 3
+            const ctx3 = document.getElementById('chart3').getContext('2d');
+            window.chartsInye[2] = new Chart(ctx3, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Significativamente', 'Moderadamente', 'Muy poco', 'Nada'],
+                    datasets: [{
+                        data: [45.5, 54.5, 0, 0],
+                        backgroundColor: [
+                            '#10b981', // Sí (Verde vibrante)
+                            '#ef4444'  // No (Rojo)
+                        ],
+                        borderWidth: 0,
+                        hoverOffset: 6
+                    }]
+                },
+                options: Object.assign({}, chartOptions, { cutout: '65%' })
+            });
         });
     </script>
+
 
     <footer class="global-footer">
         Desarrollado por Innovart &nbsp;-&nbsp; <span>Kinetos <span id="currentYear">2026</span></span>
