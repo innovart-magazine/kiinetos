@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description"
+        content="Kinetos - Revista Digital de Desarrollo de Capital Humano. Capacitaciones y cursos para el desarrollo profesional.">
+    <title>KINETOS</title>
+    <link rel="icon" href="../img/innovartnew.png">
+    <link rel="stylesheet" href="../css/entrevista.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Fade in al cargar la página */
+        body {
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: scale(0.97);
+        }
+
+        body.loaded {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="global-navbar">
+        <div class="nav-brand">
+            <span class="nav-brand-title">INNOV<span>ART</span></span>
+            <span class="nav-brand-sub">UNITEC</span>
+        </div>
+        <a href="../index.html" class="nav-center-link">KINETOS</a>
+        <div class="nav-actions">
+            <button class="nav-search-btn" id="searchBtn" aria-label="Buscar" title="Buscar capacitaciones">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+            </button>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
+                <span id="themeIcon">
+                    <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                    <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="display:none;">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                </span>
+                <span class="theme-label" id="themeLabel">Oscuro</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="search-bar-container" id="searchBarContainer">
+        <input type="text" id="searchInput" placeholder="Buscar capacitaciones por nombre o tema...">
+    </div>
+
+    <div class="container">
+        <header class="mb-10 flex justify-center items-center mt-4">
+            <div
+                class="inline-flex bg-black/40 border border-purple-500/30 rounded-full p-1 shadow-lg backdrop-blur-sm">
+                <a href="entrevista.html"
+                    class="px-8 py-2.5 rounded-full text-gray-300 font-medium hover:text-white hover:bg-white/10 transition-all">
+                    Entrevistas
+                </a>
+                <a href="capacitaciones.html"
+                    class="px-8 py-2.5 rounded-full bg-purple-600/40 text-white font-bold shadow-sm ring-1 ring-purple-500/50 transition-all">
+                    Capacitaciones
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <div class="card-grid">
+                <article class="card-glow">
+                    <div class="card-image">
+                        <span class="card-badge">Capacitación</span>
+                        <img src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Curso de Inyectología" style="object-position: center;">
+                        <div class="card-caption">
+                            <h2>Inyectología</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Fundamentos, Técnicas y Administración Parenteral</h3>
+                        <p>Aprende las bases fundamentales para la administración segura de medicamentos vía
+                            intramuscular, subcutánea e intravenosa. Ideal para personal de salud en formación.</p>
+                        <a href="../capacitaciones/inyectologia.html" class="card-button">Ver Detalles</a>
+                    </div>
+                </article>
+
+                <article class="card-glow">
+                    <div class="card-image">
+                        <span class="card-badge">Capacitación</span>
+                        <img src="https://images.pexels.com/photos/6520172/pexels-photo-6520172.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Curso de Primeros Auxilios" style="object-position: center;">
+                        <div class="card-caption">
+                            <h2>Primeros Auxilios</h2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>Atención Inmediata de Emergencias</h3>
+                        <p>Capacitación intensiva en reanimación cardiopulmonar (RCP), manejo de heridas y emergencias
+                            médicas comunes para salvar vidas en situaciones críticas.</p>
+                        <a href="../capacitaciones/primeroAuxilios.html" class="card-button">Ver Detalles</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="back-btn-wrapper">
+                <a href="../index.html" id="interviews-link" class="back-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    Volver a la Revista
+                </a>
+            </div>
+        </main>
+    </div>
+    <footer class="global-footer">
+        Desarrollado por Innovart &nbsp;-&nbsp; <span>Kinetos <span id="currentYear">2026</span></span>
+    </footer>
+
+    <script src="../js/entrevista.js" defer></script>
+</body>
+
+</html>

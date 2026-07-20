@@ -39,20 +39,23 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Transición de vuelta a la portada
-  const backBtns = document.querySelectorAll('#interviews-link, .nav-center-link');
+  // Transición de vuelta a la portada y entre secciones
+  const backBtns = document.querySelectorAll('#interviews-link, .nav-center-link, header a[href="entrevista.html"], header a[href="capacitaciones.html"]');
   backBtns.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       const href = this.getAttribute('href');
-      if (!href || href === '#') return;
+      
+      // Si el link apunta a la página en la que ya estamos, no hacemos nada
+      const currentPath = window.location.pathname.split('/').pop();
+      if (!href || href === '#' || href === currentPath) return;
 
-      document.body.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      document.body.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
       document.body.style.opacity = '0';
       document.body.style.transform = 'scale(0.96)';
       setTimeout(function () {
         window.location.href = href;
-      }, 650);
+      }, 350);
     });
   });
 
@@ -63,13 +66,13 @@ document.addEventListener("DOMContentLoaded", function() {
           const href = this.getAttribute('href');
           if (!href) return;
 
-          document.body.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+          document.body.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
           document.body.style.opacity = '0';
           document.body.style.transform = 'scale(0.95)';
 
           setTimeout(function() {
               window.location.href = href;
-          }, 550);
+          }, 350);
       });
   });
 
