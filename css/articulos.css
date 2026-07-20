@@ -603,13 +603,11 @@ body.light-mode .nav-pages button:hover , html.light-mode body .nav-pages button
 }
 
 .lista-beneficios li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
+  position: relative;
   background: rgba(142, 36, 170, 0.08);
   border: 1px solid rgba(142, 36, 170, 0.2);
   border-radius: 8px;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1rem 0.7rem 2.2rem;
   color: #d4d4d4;
   line-height: 1.55;
   transition: background 0.2s, border-color 0.2s;
@@ -622,10 +620,11 @@ body.light-mode .nav-pages button:hover , html.light-mode body .nav-pages button
 
 .lista-beneficios li::before {
   content: '✦';
+  position: absolute;
+  left: 0.8rem;
+  top: 0.85rem;
   color: #a855f7;
   font-size: 0.75rem;
-  margin-top: 0.25rem;
-  flex-shrink: 0;
 }
 
 .lista-beneficios li strong {
@@ -1897,6 +1896,7 @@ body.light-mode .carousel-nav-btn:hover , html.light-mode body .carousel-nav-btn
 }
 .custom-table {
   width: 100%;
+  min-width: 500px;
   border-collapse: collapse;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
