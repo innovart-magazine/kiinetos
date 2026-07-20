@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <script>
+        if (localStorage.getItem("kinetos-theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -163,6 +168,7 @@
 </style>
 
 <body>
+    
     <div class="social-post-container">
         <div class="post-header">
             <div class="profile-pic">SQ</div>

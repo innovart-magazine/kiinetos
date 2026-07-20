@@ -2,6 +2,11 @@
 <html lang="es">
 
 <head>
+    <script>
+        if (localStorage.getItem("kinetos-theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
@@ -18,6 +23,7 @@
 </head>
 
 <body>
+    
   <nav class="global-navbar">
     <div class="nav-brand">
       <span class="nav-brand-title">INNOV<span>ART</span></span>
@@ -92,48 +98,46 @@
                       fundamentales para evaluar el estado general de salud de una persona o identificar emergencias
                       médicas.</p>
                     <div style="overflow-x: auto; margin-top: 15px;">
-                      <table
-                        style="width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.03); border-radius: 8px; overflow: hidden; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.1);">
+                      <table class="custom-table">
                         <thead>
-                          <tr
-                            style="background: rgba(147, 51, 234, 0.2); text-align: left; border-bottom: 2px solid rgba(147, 51, 234, 0.4);">
-                            <th style="padding: 12px 15px; font-weight: 600; color: #fff;">Signo Vital</th>
-                            <th style="padding: 12px 15px; font-weight: 600; color: #fff;">Descripción</th>
-                            <th style="padding: 12px 15px; font-weight: 600; color: #fff;">Valores Normales</th>
-                            <th style="padding: 12px 15px; font-weight: 600; color: #fff;">Cómo Medirlo</th>
+                          <tr>
+                            <th>Signo Vital</th>
+                            <th>Descripción</th>
+                            <th>Valores Normales</th>
+                            <th>Cómo Medirlo</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Pulso (F. Cardíaca)</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Cantidad de veces que el corazón late por
+                          <tr>
+                            <td class="strong-col">Pulso (F. Cardíaca)</td>
+                            <td>Cantidad de veces que el corazón late por
                               minuto.</td>
-                            <td style="padding: 12px 15px; font-weight: 600; color: #4ade80;">60 - 100 lpm</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Palpar arteria radial (muñeca) o carótida
+                            <td style="font-weight: 600; color: #4ade80;">60 - 100 lpm</td>
+                            <td>Palpar arteria radial (muñeca) o carótida
                               (cuello) con dedos índice y medio.</td>
                           </tr>
-                          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Respiración</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Número de respiraciones realizadas por minuto.
+                          <tr>
+                            <td class="strong-col">Respiración</td>
+                            <td>Número de respiraciones realizadas por minuto.
                             </td>
-                            <td style="padding: 12px 15px; font-weight: 600; color: #4ade80;">12 - 20 rpm</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Observar expansión del tórax/abdomen,
+                            <td style="font-weight: 600; color: #4ade80;">12 - 20 rpm</td>
+                            <td>Observar expansión del tórax/abdomen,
                               idealmente sin que el paciente lo note.</td>
                           </tr>
-                          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Temperatura</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Equilibrio entre calor producido y perdido.
+                          <tr>
+                            <td class="strong-col">Temperatura</td>
+                            <td>Equilibrio entre calor producido y perdido.
                             </td>
-                            <td style="padding: 12px 15px; font-weight: 600; color: #4ade80;">36.5°C - 37.2°C</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Uso de termómetro (digital, axilar, etc.).
+                            <td style="font-weight: 600; color: #4ade80;">36.5°C - 37.2°C</td>
+                            <td>Uso de termómetro (digital, axilar, etc.).
                             </td>
                           </tr>
                           <tr>
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Presión Arterial</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Fuerza que ejerce la sangre contra las
+                            <td class="strong-col">Presión Arterial</td>
+                            <td>Fuerza que ejerce la sangre contra las
                               arterias.</td>
-                            <td style="padding: 12px 15px; font-weight: 600; color: #4ade80;">&lt; 120/80 mmHg</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Con tensiómetro o esfigmomanómetro.</td>
+                            <td style="font-weight: 600; color: #4ade80;">&lt; 120/80 mmHg</td>
+                            <td>Con tensiómetro o esfigmomanómetro.</td>
                           </tr>
                         </tbody>
                       </table>
@@ -181,49 +185,47 @@
                     <p>Cada tipo de trauma requiere una respuesta específica para evitar complicaciones mayores antes de
                       que llegue la ayuda médica profesional.</p>
                     <div style="overflow-x: auto; margin-top: 15px;">
-                      <table
-                        style="width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.03); border-radius: 8px; overflow: hidden; font-size: 0.95rem; border: 1px solid rgba(255,255,255,0.1);">
+                      <table class="custom-table">
                         <thead>
-                          <tr
-                            style="background: rgba(147, 51, 234, 0.2); text-align: left; border-bottom: 2px solid rgba(147, 51, 234, 0.4);">
-                            <th style="padding: 12px 15px; font-weight: 600; color: #fff;">Tipo de Lesión</th>
-                            <th style="padding: 12px 15px; font-weight: 600; color: #fff;">Descripción</th>
-                            <th style="padding: 12px 15px; font-weight: 600; color: #fff;">Atención Inicial</th>
+                          <tr>
+                            <th>Tipo de Lesión</th>
+                            <th>Descripción</th>
+                            <th>Atención Inicial</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Heridas</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Ruptura de la piel u otros tejidos.</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Lavar manos, usar guantes. Limpiar con agua y
+                          <tr>
+                            <td class="strong-col">Heridas</td>
+                            <td>Ruptura de la piel u otros tejidos.</td>
+                            <td>Lavar manos, usar guantes. Limpiar con agua y
                               jabón neutro. Presión directa si hay sangrado; cubrir con vendaje.</td>
                           </tr>
-                          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Fracturas</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Ruptura total o parcial de un hueso.</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;"><strong style="color: #f87171;">¡No intentar
+                          <tr>
+                            <td class="strong-col">Fracturas</td>
+                            <td>Ruptura total o parcial de un hueso.</td>
+                            <td><strong style="color: #f87171;">¡No intentar
                                 realinear el hueso!</strong> Inmovilizar en la misma posición encontrada usando férulas;
                               acudir a urgencias.</td>
                           </tr>
-                          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Luxaciones</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Desplazamiento de un hueso de su articulación.
+                          <tr>
+                            <td class="strong-col">Luxaciones</td>
+                            <td>Desplazamiento de un hueso de su articulación.
                             </td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">No intentar acomodar el hueso. Inmovilizar,
+                            <td>No intentar acomodar el hueso. Inmovilizar,
                               aplicar hielo envuelto en paño y buscar ayuda médica.</td>
                           </tr>
-                          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Esguinces</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Estiramiento o desgarro de ligamentos (común
+                          <tr>
+                            <td class="strong-col">Esguinces</td>
+                            <td>Estiramiento o desgarro de ligamentos (común
                               en tobillos/muñecas).</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Aplicar protocolo <strong>R.I.C.E.</strong>:
+                            <td>Aplicar protocolo <strong>R.I.C.E.</strong>:
                               Reposo, Hielo (Ice) por 15-20 min, Compresión y Elevación.</td>
                           </tr>
                           <tr>
-                            <td style="padding: 12px 15px; font-weight: 500; color: #e9d5ff;">Quemaduras</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Lesiones por calor, químicos, electricidad o
+                            <td class="strong-col">Quemaduras</td>
+                            <td>Lesiones por calor, químicos, electricidad o
                               radiación.</td>
-                            <td style="padding: 12px 15px; opacity: 0.9;">Enfriar con agua corriente fría (no hielo) por
+                            <td>Enfriar con agua corriente fría (no hielo) por
                               10-15 min. No reventar ampollas; cubrir con apósito seco estéril.</td>
                           </tr>
                         </tbody>
@@ -557,7 +559,10 @@
 
     document.addEventListener("DOMContentLoaded", () => {
 
-      Chart.defaults.color = '#e2e8f0';
+      const isLightInitial = document.body.classList.contains("light-mode");
+      const initialTextColor = isLightInitial ? '#334155' : '#e2e8f0';
+
+      Chart.defaults.color = initialTextColor;
       Chart.defaults.font.family = 'Inter';
 
       const chartOptions = {
@@ -572,7 +577,7 @@
         plugins: {
           legend: {
             position: 'bottom',
-            labels: { color: '#e2e8f0', padding: 15, font: { size: 11 } }
+            labels: { color: initialTextColor, padding: 15, font: { size: 11 } }
           },
           tooltip: {
             backgroundColor: 'rgba(20, 20, 30, 0.9)',
@@ -627,6 +632,23 @@
           }]
         },
         options: Object.assign({}, chartOptions, { cutout: '65%' })
+      });
+
+      // Update charts on theme toggle
+      document.addEventListener('themeToggled', (e) => {
+        const isLight = e.detail.isLight;
+        const textColor = isLight ? '#334155' : '#e2e8f0';
+        Chart.defaults.color = textColor;
+        window.chartsPrim.forEach(chart => {
+          if (chart.options.plugins.legend) {
+            chart.options.plugins.legend.labels.color = textColor;
+          }
+          if (chart.options.plugins.tooltip) {
+            chart.options.plugins.tooltip.titleColor = textColor;
+            chart.options.plugins.tooltip.bodyColor = textColor;
+          }
+          chart.update();
+        });
       });
     });
   </script>

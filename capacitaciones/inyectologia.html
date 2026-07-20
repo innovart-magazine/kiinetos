@@ -2,6 +2,11 @@
 <html lang="es">
 
 <head>
+    <script>
+        if (localStorage.getItem("kinetos-theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -18,6 +23,7 @@
 </head>
 
 <body>
+    
     <nav class="global-navbar">
         <div class="nav-brand">
             <span class="nav-brand-title">INNOV<span>ART</span></span>
@@ -600,7 +606,11 @@
             }
 
             // Configuración de Gráficas Chart.js
-            Chart.defaults.color = '#e2e8f0';
+            const isLightInitial = document.body.classList.contains("light-mode");
+            const initialTextColor = isLightInitial ? '#334155' : '#e2e8f0';
+            const initialGridColor = isLightInitial ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.05)';
+
+            Chart.defaults.color = initialTextColor;
             Chart.defaults.font.family = 'Inter';
 
             const chartOptions = {
@@ -616,7 +626,7 @@
                     legend: {
                         position: 'bottom',
                         labels: {
-                            color: '#e2e8f0',
+                            color: initialTextColor,
                             padding: 15,
                             font: { size: 11 }
                         }
@@ -694,12 +704,12 @@
                     scales: {
                         y: {
                             beginAtZero: true,
-                            grid: { color: 'rgba(255,255,255,0.05)' },
-                            ticks: { color: '#e2e8f0' }
+                            grid: { color: initialGridColor },
+                            ticks: { color: initialTextColor }
                         },
                         x: {
                             grid: { display: false },
-                            ticks: { color: '#e2e8f0' }
+                            ticks: { color: initialTextColor }
                         }
                     }
                 })
@@ -722,6 +732,28 @@
                     }]
                 },
                 options: Object.assign({}, chartOptions, { cutout: '65%' })
+            });
+
+            // Update charts on theme toggle
+            document.addEventListener('themeToggled', (e) => {
+                const isLight = e.detail.isLight;
+                const textColor = isLight ? '#334155' : '#e2e8f0';
+                const gridColor = isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.05)';
+                Chart.defaults.color = textColor;
+                window.chartsInye.forEach(chart => {
+                    if (chart.options.plugins.legend) {
+                        chart.options.plugins.legend.labels.color = textColor;
+                    }
+                    if (chart.options.scales && chart.options.scales.x) {
+                        chart.options.scales.x.ticks.color = textColor;
+                        if (chart.options.scales.x.grid) chart.options.scales.x.grid.color = gridColor;
+                    }
+                    if (chart.options.scales && chart.options.scales.y) {
+                        chart.options.scales.y.ticks.color = textColor;
+                        if (chart.options.scales.y.grid) chart.options.scales.y.grid.color = gridColor;
+                    }
+                    chart.update();
+                });
             });
         });
     </script>

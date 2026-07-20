@@ -132,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.toggle("light-mode");
       const isLight = document.body.classList.contains("light-mode");
       localStorage.setItem("kinetos-theme", isLight ? "light" : "dark");
+      document.dispatchEvent(new CustomEvent('themeToggled', { detail: { isLight } }));
     });
   }
 });

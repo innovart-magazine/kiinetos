@@ -2,6 +2,11 @@
 <html lang="es">
 
 <head>
+    <script>
+        if (localStorage.getItem("kinetos-theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description"
@@ -28,6 +33,7 @@
 </head>
 
 <body>
+
     <nav class="global-navbar">
         <div class="nav-brand">
             <span class="nav-brand-title">INNOV<span>ART</span></span>
@@ -92,8 +98,7 @@
                 <article class="card-glow">
                     <div class="card-image">
                         <span class="card-badge">Capacitación</span>
-                        <img src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            alt="Curso de Inyectología" style="object-position: center;">
+                        <img src="/img-cap/inyec.png" alt="Curso de Inyectología" style="object-position: center;">
                         <div class="card-caption">
                             <h2>Inyectología</h2>
                         </div>
@@ -109,8 +114,7 @@
                 <article class="card-glow">
                     <div class="card-image">
                         <span class="card-badge">Capacitación</span>
-                        <img src="https://images.pexels.com/photos/6520172/pexels-photo-6520172.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            alt="Curso de Primeros Auxilios" style="object-position: center;">
+                        <img src="/img-cap/PA.png" alt="Curso de Primeros Auxilios" style="object-position: center;">
                         <div class="card-caption">
                             <h2>Primeros Auxilios</h2>
                         </div>

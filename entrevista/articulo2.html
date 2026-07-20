@@ -2,6 +2,11 @@
 <html lang="es">
 
 <head>
+    <script>
+        if (localStorage.getItem("kinetos-theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KINETOS</title>
@@ -146,6 +151,7 @@
 </head>
 
 <body>
+    
   <nav class="global-navbar">
     <div class="nav-brand">
       <span class="nav-brand-title">INNOV<span>ART</span></span>

@@ -63,6 +63,18 @@ body {
   backface-visibility: hidden;
 }
 
+.card-image::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .card-glow:hover .card-image img {
   transform: scale(1.05) rotateZ(1deg);
 }
@@ -88,7 +100,8 @@ body {
   right: 18px;
   bottom: 18px;
   color: #ffffff;
-  text-shadow: 0 0 18px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  z-index: 2;
 }
 
 .card-caption h2 {
