@@ -2177,19 +2177,13 @@ th {
    ========================================================================== */
 
 /* 1. Límite Estricto a la Tarjeta / Contenedor del Acordeón */
-.accordion-item {
-  width: 100% !important;
-  max-width: 100% !important;
-  box-sizing: border-box !important;
-  overflow: hidden !important;
-}
-
+/* Eliminado overflow: hidden/visible para no interferir con la animación JS del acordeón y evitar recortes verticales */
+.accordion-item,
 .accordion-content,
 .accordion-inner {
   width: 100% !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
-  overflow: visible !important;
 }
 
 .page {
@@ -2203,13 +2197,11 @@ th {
 .accordion-content img,
 .accordion-item img,
 .accordion-inner img {
-  width: 100% !important;
   max-width: 100% !important;
   height: auto !important;
   display: block !important;
   margin: 0 auto !important;
   border-radius: 8px;
-  object-fit: contain !important;
 }
 
 /* 3. Envoltorio y Scroll Interno para Tablas */
