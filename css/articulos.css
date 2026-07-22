@@ -141,6 +141,7 @@ body {
   /* Ocultar scrollbar vertical de cada página */
   scrollbar-width: none;
   -ms-overflow-style: none;
+  min-width: 0;
 }
 
 .page::-webkit-scrollbar {
@@ -876,6 +877,7 @@ body.light-mode .accordion-icon , html.light-mode body .accordion-icon {
 
 .accordion-text {
   flex: 1;
+  min-width: 0;
 }
 
 .accordion-text p {
@@ -1570,6 +1572,7 @@ body.light-mode .info-card , html.light-mode body .info-card {
   position: relative;
   height: 280px;
   width: 100%;
+  min-width: 0;
 }
 .comment-box {
   display: flex;
@@ -1955,6 +1958,7 @@ body.light-mode .carousel-nav-btn:hover , html.light-mode body .carousel-nav-btn
     position: relative !important;
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
   }
 
   .comment-content {
@@ -1963,3 +1967,54 @@ body.light-mode .carousel-nav-btn:hover , html.light-mode body .carousel-nav-btn
     overflow-wrap: break-word !important;
   }
 }
+
+/* ==========================================================================
+   CAPA DE SEGURIDAD CSS - RESPONSIVIDAD GLOBAL
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+img,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+iframe[src*="youtube.com"] {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6, a, span, td, th {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.flex-container > *,
+.flex-child,
+.accordion-content,
+.card-content {
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .carousel-slide {
+    width: 100%; 
+    max-width: 100vw;
+  }
+}
+
