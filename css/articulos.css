@@ -2202,6 +2202,7 @@ th {
   display: block !important;
   margin: 0 auto !important;
   border-radius: 8px;
+  object-fit: contain !important;
 }
 
 /* 3. Envoltorio y Scroll Interno para Tablas */
@@ -2211,13 +2212,14 @@ th {
   max-width: 100% !important;
   overflow-x: auto !important;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain !important;
 }
 
 .table-responsive table,
 .table-container table,
 .accordion-content table {
   width: 100% !important;
-  max-width: 100% !important;
-  table-layout: fixed !important;
-  word-wrap: break-word !important;
+  min-width: 500px !important;
+  max-width: none !important;
+  table-layout: auto !important;
 }
