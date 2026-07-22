@@ -597,7 +597,8 @@ p, h1, h2, h3, h4, h5, h6, a, span, td, th {
   height: auto !important;
   display: block;
   margin: 0 auto;
-  object-fit: contain;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /* 2. Scroll Horizontal Aislado para Tablas */
@@ -610,7 +611,6 @@ p, h1, h2, h3, h4, h5, h6, a, span, td, th {
 
 .table-responsive table {
   width: 100%;
-  border-collapse: collapse;
 }
 
 /* 3. Bloqueo de Desbordamiento del Panel */

@@ -1778,7 +1778,7 @@ body.light-mode .custom-table th , html.light-mode body .custom-table th {
   border-bottom-color: rgba(147, 51, 234, 0.2);
   color: #4338ca;
 }
-body.light-mode .custom-table tr , html.light-mode body .custom-table tr {
+body.light-mode .custom-table td, html.light-mode body .custom-table td {
   border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 body.light-mode .custom-table td , html.light-mode body .custom-table td {
@@ -1900,7 +1900,8 @@ body.light-mode .carousel-nav-btn:hover , html.light-mode body .carousel-nav-btn
 .custom-table {
   width: 100%;
   min-width: 500px;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 8px;
   overflow: hidden;
@@ -1918,9 +1919,10 @@ body.light-mode .carousel-nav-btn:hover , html.light-mode body .carousel-nav-btn
 .custom-table td {
   padding: 12px 15px;
   opacity: 0.9;
-}
-.custom-table tr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.custom-table tr:last-child td {
+  border-bottom: none;
 }
 .custom-table td.strong-col {
   font-weight: 500;
@@ -1950,7 +1952,6 @@ body.light-mode .carousel-nav-btn:hover , html.light-mode body .carousel-nav-btn
   img, .post-image, .info-section img {
     max-width: 100% !important;
     height: auto !important;
-    object-fit: contain !important;
   }
 
   /* 3. Gráficas de Chart.js y Textos Flexbox */
@@ -2029,7 +2030,8 @@ p, h1, h2, h3, h4, h5, h6, a, span, td, th {
   height: auto !important;
   display: block;
   margin: 0 auto;
-  object-fit: contain;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /* 2. Scroll Horizontal Aislado para Tablas */
@@ -2042,7 +2044,6 @@ p, h1, h2, h3, h4, h5, h6, a, span, td, th {
 
 .table-responsive table {
   width: 100%;
-  border-collapse: collapse;
 }
 
 /* 3. Bloqueo de Desbordamiento del Panel */
