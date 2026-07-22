@@ -618,36 +618,45 @@ p, h1, h2, h3, h4, h5, h6, a, span, td, th {
 }
 
 /* ==========================================================================
-   FIX ACORDEONES MÓVILES - IMÁGENES Y TABLAS
+   FIX DEFINITIVO DESBORDAMIENTO ACORDEONES (ALTA PRIORIDAD)
    ========================================================================== */
 
-/* 1. Contención Total de Imágenes en Acordeones */
-.accordion-content img,
-.accordion-item img {
+/* 1. Límite Estricto a la Tarjeta / Contenedor del Acordeón */
+.accordion-item,
+.accordion-content,
+.accordion-inner,
+.page {
+  width: 100% !important;
   max-width: 100% !important;
-  height: auto !important;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-  overflow: hidden;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
 }
 
-/* 2. Scroll Horizontal Aislado para Tablas */
-.table-responsive {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: auto;
+/* 2. Ajuste de Imágenes */
+.accordion-content img,
+.accordion-item img,
+.accordion-inner img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  border-radius: 8px;
+}
+
+/* 3. Envoltorio y Scroll Interno para Tablas */
+.table-responsive,
+.table-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
   -webkit-overflow-scrolling: touch;
 }
 
-.table-responsive table {
-  width: 100%;
-}
-
-/* 3. Bloqueo de Desbordamiento del Panel */
-.accordion-item,
-.accordion-content,
-.accordion-inner {
-  max-width: 100%;
-  box-sizing: border-box;
+.table-responsive table,
+.table-container table,
+.accordion-content table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+  word-wrap: break-word !important;
 }
