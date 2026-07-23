@@ -1,0 +1,549 @@
+/* ==========================================================================
+   INNOVART JOURNEY CSS (Glassmorphism & Compact Layout)
+   ========================================================================== */
+
+:root {
+    --innovart-purple: #7c3aed;
+    --neon-purple: #a78bfa;
+    --neon-blue: #38bdf8;
+    --neon-cyan: #34d399;
+    --neon-green: #39ff14; /* High-performance neon green */
+    --glass-bg: rgba(18, 18, 28, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-dark: #ffffff;
+}
+
+html.light-mode {
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --text-dark: #111111;
+    --neon-purple: #7c3aed;
+    --neon-blue: #0284c7;
+    --neon-cyan: #059669;
+    --neon-green: #059669; /* darker for light mode */
+}
+
+body {
+    background-color: #0b0b0b;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(124, 58, 237, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(167, 139, 250, 0.03) 0%, transparent 50%),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+    color: var(--text-dark);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+html.light-mode body {
+    background-color: #f5f5f5;
+}
+
+.journey-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* MAX GAP 16PX */
+}
+
+/* Base Glass Card */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Icon Colors */
+.icon-neon-purple { color: var(--neon-purple); width: 32px; height: 32px; }
+.icon-neon-blue { color: var(--neon-blue); width: 32px; height: 32px; }
+.icon-neon-cyan { color: var(--neon-cyan); width: 32px; height: 32px; }
+
+/* --- Fase 1: Hero --- */
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.glitch-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0 0 8px 0;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(124, 58, 237, 0.2);
+    border: 1px solid var(--innovart-purple);
+    color: var(--neon-purple);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin: 0 0 12px 0;
+    color: var(--neon-cyan);
+}
+
+.description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.85;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    background: rgba(255,255,255,0.05);
+    border: 1px dashed var(--glass-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    opacity: 0.5;
+}
+
+/* --- Fase 2: Misión y Visión --- */
+.mission-vision-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 16px;
+}
+
+.mv-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mv-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mv-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.mv-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.85;
+}
+
+/* --- Fase 2b: Objetivos --- */
+.objectives-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.objective-general {
+    background: rgba(52, 211, 153, 0.05);
+    border-left: 3px solid var(--neon-cyan);
+    padding: 16px 20px;
+    border-radius: 8px;
+}
+
+.obj-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.obj-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--neon-cyan);
+}
+
+.objective-general p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.obj-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 16px 16px 16px 50px;
+    overflow: hidden;
+}
+
+.obj-num {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+}
+html.light-mode .obj-num {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.obj-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Fase 3: Flujo de Trabajo --- */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+.section-title {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.flow-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.flow-step {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.flow-step p {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.flow-arrow {
+    color: var(--neon-purple);
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* --- Fase 4: Estrategia UNITEC --- */
+.strategy-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.strategy-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.strategy-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.strategy-card ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   HIGH PERFORMANCE DESIGN (Neon Purple Accents & Grid)
+   ========================================================================== */
+.badge-neon-purple {
+    background: rgba(167, 139, 250, 0.1);
+    border-color: var(--neon-purple);
+    color: var(--neon-purple);
+}
+.subtitle-neon-purple {
+    color: var(--neon-purple);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.text-neon-purple {
+    color: var(--neon-purple) !important;
+}
+.icon-neon-purple {
+    color: var(--neon-purple); 
+    width: 32px; 
+    height: 32px;
+}
+.hero-img-real {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(167, 139, 250, 0.15);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    object-fit: cover;
+}
+.mv-card {
+    position: relative;
+    overflow: hidden;
+}
+.watermark-icon {
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    width: 120px;
+    height: 120px;
+    opacity: 0.05;
+    color: var(--text-dark);
+}
+.bg-gradient-purple {
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(18, 18, 28, 0.7) 100%);
+    border-left: 3px solid var(--neon-purple);
+}
+.high-perf-grid {
+    grid-template-columns: 1fr 1fr !important;
+}
+.high-perf-card {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+}
+.obj-bg-num {
+    position: absolute;
+    right: 10px;
+    top: -5px;
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.05);
+    line-height: 1;
+    z-index: 0;
+}
+.high-perf-card h4 {
+    margin: 12px 0 8px;
+    font-size: 1.1rem;
+    z-index: 1;
+}
+.obj-card-icon {
+    z-index: 1;
+}
+
+/* ==========================================================================
+   UI/UX INTERACTIVITY (Tabs, Hover FX, Accordions, Observer)
+   ========================================================================== */
+
+/* --- 1. Tabs Interactivas --- */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.tab-btn {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-dark);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+.tab-btn:hover {
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.tab-btn.active {
+    background: var(--neon-purple);
+    color: white;
+    border-color: var(--neon-purple);
+    box-shadow: 0 4px 20px rgba(167, 139, 250, 0.4);
+}
+
+.tab-content {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+}
+.tab-content.active {
+    display: flex;
+}
+
+/* --- 2. Microinteracciones (Hover & Touch) --- */
+.glass-card, .interactive-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease,
+                background 0.4s ease;
+}
+
+.interactive-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(167, 139, 250, 0.15), 0 0 15px rgba(56, 189, 248, 0.1);
+    border-color: rgba(167, 139, 250, 0.4);
+    background: rgba(167, 139, 250, 0.03);
+    cursor: pointer;
+}
+
+/* --- 3. Accordions (Tarjetas Desplegables) --- */
+.expand-icon {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    color: rgba(255,255,255,0.4);
+    transition: transform 0.4s ease;
+}
+html.light-mode .expand-icon {
+    color: rgba(0,0,0,0.4);
+}
+.interactive-card.expanded .expand-icon {
+    transform: rotate(180deg);
+}
+.expandable-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 0;
+}
+.interactive-card.expanded .expandable-content {
+    margin-top: 12px;
+}
+.expandable-content p {
+    color: var(--neon-cyan);
+    font-size: 0.85rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+    /* --- Scroll Animations (Observer) --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Animación de Salida de Página --- */
+.page-exit {
+    animation: fadeOutPage 0.4s ease-in forwards !important;
+}
+
+@keyframes fadeOutPage {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.98);
+    }
+}
+
+
+/* --- RESPONSIVIDAD (ESTRICTA < 768px a 1 columna) --- */
+@media (max-width: 767px) {
+    .hero-layout,
+    .mission-vision-layout,
+    .objectives-grid,
+    .strategy-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-layout {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .image-placeholder {
+        min-height: 180px;
+    }
+
+    .flow-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .flow-step {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+        text-align: center;
+        margin: 4px 0;
+    }
+    
+    .tabs-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

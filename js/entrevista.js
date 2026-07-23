@@ -12,10 +12,24 @@ document.addEventListener("DOMContentLoaded", function() {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Fade in animation
+  // Fade in animation (directional based on previous navigation)
+  const navDir = sessionStorage.getItem('kinetos-nav-dir');
+  if (navDir === 'left') {
+    document.body.style.transform = 'translateX(30px)';
+  } else if (navDir === 'right') {
+    document.body.style.transform = 'translateX(-30px)';
+  } else {
+    document.body.style.transform = 'scale(0.97)';
+  }
+  sessionStorage.removeItem('kinetos-nav-dir');
+  
+  // Force reflow
+  void document.body.offsetWidth;
+
   setTimeout(function () {
     document.body.classList.add('loaded');
-  }, 80);
+    document.body.style.transform = 'translateX(0) scale(1)';
+  }, 30);
 
   // Theme Toggle
   const themeBtn = document.getElementById("themeToggle");
@@ -40,22 +54,44 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Transición de vuelta a la portada y entre secciones
-  const backBtns = document.querySelectorAll('#interviews-link, .nav-center-link, header a[href="entrevista.html"], header a[href="capacitaciones.html"]');
+  const backBtns = document.querySelectorAll('#interviews-link, .nav-center-link, header a[href="entrevista.html"], header a[href="capacitaciones.html"], header a[href="visitas.html"]');
   backBtns.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
       const href = this.getAttribute('href');
       
-      // Si el link apunta a la página en la que ya estamos, no hacemos nada
       const currentPath = window.location.pathname.split('/').pop();
       if (!href || href === '#' || href === currentPath) return;
 
-      document.body.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      // Determinar dirección si estamos navegando en el menú de pills
+      const menuOrder = ['entrevista.html', 'capacitaciones.html', 'visitas.html'];
+      const targetPage = href.split('/').pop();
+      
+      const targetIdx = menuOrder.indexOf(targetPage);
+      const currentIdx = menuOrder.indexOf(currentPath);
+      
+      document.body.style.transition = 'opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
       document.body.style.opacity = '0';
-      document.body.style.transform = 'scale(0.96)';
+
+      if (targetIdx !== -1 && currentIdx !== -1) {
+          // Navegación direccional
+          if (targetIdx > currentIdx) {
+              // Va a la derecha, la página actual sale hacia la izquierda
+              document.body.style.transform = 'translateX(-30px)';
+              sessionStorage.setItem('kinetos-nav-dir', 'left'); // La nueva página entrará desde la derecha (moviéndose hacia la izq)
+          } else {
+              // Va a la izquierda, la página actual sale hacia la derecha
+              document.body.style.transform = 'translateX(30px)';
+              sessionStorage.setItem('kinetos-nav-dir', 'right'); // La nueva página entrará desde la izquierda (moviéndose hacia la der)
+          }
+      } else {
+          // Animación por defecto (scale down)
+          document.body.style.transform = 'scale(0.96)';
+      }
+
       setTimeout(function () {
         window.location.href = href;
-      }, 350);
+      }, 300);
     });
   });
 

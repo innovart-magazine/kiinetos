@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script>
+        if (localStorage.getItem("kinetos-theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kinetos - Visita Industrial a Empresas Polar. Aprendizajes en Desarrollo de Capital Humano.">
+    <title>KINETOS</title>
+    <link rel="icon" href="../img/innovartnew.png">
+    <link rel="stylesheet" href="../css/articulos.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Imagen de cabecera de la visita */
+        .visit-hero-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="global-navbar">
+        <div class="nav-brand">
+            <span class="nav-brand-title">INNOV<span>ART</span></span>
+            <span class="nav-brand-sub">UNITEC</span>
+        </div>
+        <a href="../section/visitas.html" class="nav-center-link">KINETOS</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
+                <span id="themeIcon">
+                    <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                    <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="display:none;">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                </span>
+                <span class="theme-label" id="themeLabel">Oscuro</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="article-view">
+        <!-- Cabecera -->
+        <div class="article-header">
+            <a href="../section/visitas.html" class="back-btn">Volver a visitas</a>
+            <span class="article-title">Visita Empresarial · Empresas Polar</span>
+            <span class="page-indicator" id="pageIndicator">Página 1 / 2</span>
+        </div>
+
+        <!-- Contenedor de páginas -->
+        <div class="pages-container">
+            <!-- Página 1 -->
+            <div class="page" style="display: block;">
+                <div class="page-number">Página 1 de 2</div>
+                <div class="page-content">
+
+                    <h2>Cultura Organizacional: <span class="highlight">La experiencia dentro de Empresas Polar</span>
+                    </h2>
+                    <p class="byline">Por Equipo Kinetos | 24 de Julio, 2026</p>
+
+                    <p>Como parte de nuestro compromiso con el entendimiento de las dinámicas de capital humano en
+                        entornos reales de alta exigencia, el equipo de investigación de Innovart y estudiantes de la
+                        UNITEC tuvimos la oportunidad de realizar un recorrido por las instalaciones operativas de
+                        <strong>Empresas Polar</strong>, uno de los complejos agroindustriales más grandes del
+                        continente.
+                    </p>
+
+                    <p>Durante la jornada, el objetivo principal fue analizar cómo se aplican en la práctica las
+                        metodologías de selección, evaluación y capacitación que hemos estado estudiando. Polar destaca
+                        por tener un modelo de gestión enfocado no solo en la eficiencia, sino fuertemente en el sentido
+                        de pertenencia y el bienestar integral de su talento humano.</p>
+
+                    <div class="quote">
+                        "El recurso más valioso no es la maquinaria de última generación, sino el operador que, con años
+                        de experiencia y formación continua, sabe cómo optimizar su rendimiento diario."
+                    </div>
+
+                    <p>Pudimos conversar con líderes de área y gerentes de RRHH, quienes nos compartieron los retos que
+                        enfrentan actualmente para adaptar sus programas de formación a las nuevas generaciones,
+                        manteniendo al mismo tiempo los valores fundacionales de la corporación.</p>
+                </div>
+            </div>
+
+            <!-- Página 2 -->
+            <div class="page" style="display:none;">
+                <div class="page-number">Página 2 de 2</div>
+                <div class="page-content">
+                    <h2>Seguridad y Prevención: <span class="highlight">Un estándar innegociable</span></h2>
+
+                    <p>Otro de los ejes de investigación durante la visita fue el sistema de <strong>Seguridad y
+                            Prevención de Riesgos</strong>. Al tratarse de una planta con un volumen masivo de
+                        operaciones mecánicas, químicas y logísticas, la cultura de prevención de riesgos no es solo un
+                        protocolo en papel, es una conducta interiorizada por cada empleado.</p>
+
+                    <p>Observamos en vivo la ejecución de pausas activas, el riguroso uso de equipos de protección
+                        personal (EPP) y cómo los indicadores de seguridad (Cero Accidentes) son exhibidos y celebrados
+                        en cada departamento como un logro de todo el equipo.</p>
+
+                    <p><strong>Principales Aprendizajes:</strong></p>
+                    <ul>
+                        <li>La retención de talento en entornos industriales requiere más que un buen salario; exige
+                            planes de carrera claros.</li>
+                        <li>La seguridad laboral mejora cuando los trabajadores son parte del diseño de los protocolos y
+                            no solo ejecutores.</li>
+                        <li>Las líneas de comunicación abierta son vitales para identificar "cuellos de botella"
+                            operativos.</li>
+                    </ul>
+
+                    <p>Esta visita refuerza nuestra Línea de Trabajo en <em>Seguridad y Prevención</em>, brindándonos
+                        casos de estudio valiosos que pronto integraremos en los programas de formación para los futuros
+                        líderes en Gestión Humana de la UNITEC.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="nav-pages">
+            <button id="prevBtn" disabled>‹</button>
+            <button id="nextBtn">›</button>
+        </div>
+    </div>
+
+    <footer class="global-footer">
+        Desarrollado por Innovart &nbsp;-&nbsp; <span>Kinetos <span id="currentYear">2026</span></span>
+    </footer>
+
+    <!-- Script de paginación y tema -->
+    <script>
+        // Inicializar iconos si el script cargó
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        } else {
+            window.addEventListener('load', () => {
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            });
+        }
+
+        // Interceptor de animación de salida para links
+        document.querySelectorAll('a.nav-center-link, a.back-btn').forEach(link => {
+            link.addEventListener('click', function (e) {
+                if (this.getAttribute('href') && !this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetUrl = this.href;
+                    document.body.style.opacity = '0';
+                    document.body.style.transition = 'opacity 0.3s ease';
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 300);
+                }
+            });
+        });
+
+        // Paginación
+        const pages = document.querySelectorAll('.page');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageIndicator = document.getElementById('pageIndicator');
+        let currentPage = 0;
+
+        function showPage(index) {
+            pages.forEach((page, i) => {
+                if (i === index) {
+                    page.style.display = 'block';
+                    // Animación suave de entrada de página
+                    page.style.opacity = '0';
+                    page.style.transform = 'translateY(10px)';
+                    setTimeout(() => {
+                        page.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                        page.style.opacity = '1';
+                        page.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    page.style.display = 'none';
+                }
+            });
+
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === pages.length - 1;
+            pageIndicator.textContent = `Página ${index + 1} / ${pages.length}`;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        });
+
+        // Asegurar que la página 1 inicie visible incluso sin JS (el inline style ya lo hace, pero reconfirmamos)
+        showPage(0);
+
+        // Lógica de modo oscuro
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeLabel = document.getElementById('themeLabel');
+        const iconMoon = document.getElementById('iconMoon');
+        const iconSun = document.getElementById('iconSun');
+
+        function updateThemeUI(isLight) {
+            if (isLight) {
+                iconMoon.style.display = 'none';
+                iconSun.style.display = 'block';
+                themeLabel.textContent = 'Claro';
+            } else {
+                iconMoon.style.display = 'block';
+                iconSun.style.display = 'none';
+                themeLabel.textContent = 'Oscuro';
+            }
+        }
+
+        const currentTheme = localStorage.getItem('kinetos-theme');
+        if (currentTheme === 'light') {
+            updateThemeUI(true);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isLight = document.documentElement.classList.toggle('light-mode');
+            if (isLight) {
+                localStorage.setItem('kinetos-theme', 'light');
+            } else {
+                localStorage.setItem('kinetos-theme', 'dark');
+            }
+            updateThemeUI(isLight);
+        });
+    </script>
+</body>
+
+</html>
