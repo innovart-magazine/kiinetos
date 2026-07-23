@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
         pages.forEach((page, i) => {
             if (i === index) {
                 page.style.display = 'block';
+                // Trigger resize so Chart.js renders correctly after display:none
+                setTimeout(() => window.dispatchEvent(new Event('resize')), 20);
                 // Animación suave de entrada de página
                 page.style.opacity = '0';
                 page.style.transform = 'translateY(10px)';
