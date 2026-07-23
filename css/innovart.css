@@ -356,8 +356,10 @@ html.light-mode .obj-num {
     background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(18, 18, 28, 0.7) 100%);
     border-left: 3px solid var(--neon-purple);
 }
-.high-perf-grid {
-    grid-template-columns: 1fr 1fr !important;
+@media (min-width: 768px) {
+    .high-perf-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
 }
 .high-perf-card {
     display: flex;
