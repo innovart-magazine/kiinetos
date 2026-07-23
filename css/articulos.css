@@ -2065,42 +2065,69 @@ html.light-mode body .carousel-nav-btn:hover {
   color: #e9d5ff;
 }
 
-/* ===== GALERÍA TIPO PINTEREST (MASONRY GRID) ===== */
-.gallery-wrapper {
-  margin-top: 40px;
-}
-
-.gallery-toggle-btn {
+/* ===== GALERÍA TIPO PINTEREST (MODAL / NUEVA VENTANA) ===== */
+.gallery-open-btn {
   background: rgba(139, 92, 246, 0.2);
   border: 1px solid rgba(139, 92, 246, 0.5);
   color: #e9d5ff;
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-family: inherit;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   cursor: pointer;
   display: block;
-  margin: 0 auto 20px;
+  margin: 30px auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
+}
+
+.gallery-open-btn:hover {
+  background: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.gallery-modal {
+  position: fixed;
+  top: 100%; /* Hidden by default at the bottom */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0b0b0b; /* Solid background for the modal */
+  z-index: 1000;
+  overflow-y: auto;
+  transition: top 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2rem;
+  padding-top: 5rem;
+}
+
+.gallery-modal.active {
+  top: 0; /* Slide up to cover the screen */
+}
+
+.gallery-close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1010;
   transition: all 0.3s ease;
 }
 
-.gallery-toggle-btn:hover {
-  background: rgba(139, 92, 246, 0.4);
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
-}
-
-.pinterest-container {
-  overflow: hidden;
-  max-height: 3000px;
-  opacity: 1;
-  transition: max-height 0.6s cubic-bezier(0, 1, 0, 1), opacity 0.6s ease, margin 0.6s ease;
-}
-
-.pinterest-container.hidden {
-  max-height: 0;
-  opacity: 0;
-  margin-top: 0;
+.gallery-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
 }
 
 .pinterest-grid {
