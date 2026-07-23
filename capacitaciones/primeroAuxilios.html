@@ -353,6 +353,52 @@
 
           <div class="quote">"Saber qué hacer en los primeros minutos de una emergencia es el mejor regalo que
             puedes darle a alguien que amas."</div>
+
+          <div class="gallery-wrapper">
+            <button id="toggleGalleryPa" class="gallery-toggle-btn">Cerrar</button>
+            <div id="galleryContainerPa" class="pinterest-container">
+              <div class="pinterest-grid">
+                <div class="pin-card">
+                  <span class="pin-badge">Capacitación</span>
+                  <video src="../img-cap/img-pa/WhatsApp Video 2026-07-22 at 17.53.17 (1).mp4" autoplay loop muted playsinline></video>
+                </div>
+                <div class="pin-card">
+                  <span class="pin-badge">RCP</span>
+                  <img src="../img-cap/img-pa/image.png" alt="Primeros Auxilios 1">
+                </div>
+                <div class="pin-card">
+                  <span class="pin-badge">Equipo</span>
+                  <video src="../img-cap/img-pa/WhatsApp Video 2026-07-22 at 17.53.17.mp4" autoplay loop muted playsinline></video>
+                </div>
+                <div class="pin-card">
+                  <span class="pin-badge">Práctica</span>
+                  <img src="../img-cap/img-pa/image copy.png" alt="Primeros Auxilios 2">
+                </div>
+                <div class="pin-card">
+                  <img src="../img-cap/img-pa/image copy 2.png" alt="Primeros Auxilios 3">
+                </div>
+                <div class="pin-card">
+                  <img src="../img-cap/img-pa/image copy 3.png" alt="Primeros Auxilios 4">
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const btn = document.getElementById('toggleGalleryPa');
+              const container = document.getElementById('galleryContainerPa');
+              if (btn && container) {
+                btn.addEventListener('click', () => {
+                  container.classList.toggle('hidden');
+                  if (container.classList.contains('hidden')) {
+                    btn.textContent = 'Ver Galería';
+                  } else {
+                    btn.textContent = 'Cerrar';
+                  }
+                });
+              }
+            });
+          </script>
         </div>
       </div>
 

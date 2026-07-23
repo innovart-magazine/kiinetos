@@ -2065,6 +2065,116 @@ html.light-mode body .carousel-nav-btn:hover {
   color: #e9d5ff;
 }
 
+/* ===== GALERÍA TIPO PINTEREST (MASONRY GRID) ===== */
+.gallery-wrapper {
+  margin-top: 40px;
+}
+
+.gallery-toggle-btn {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  color: #e9d5ff;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 20px;
+  transition: all 0.3s ease;
+}
+
+.gallery-toggle-btn:hover {
+  background: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.pinterest-container {
+  overflow: hidden;
+  max-height: 3000px;
+  opacity: 1;
+  transition: max-height 0.6s cubic-bezier(0, 1, 0, 1), opacity 0.6s ease, margin 0.6s ease;
+}
+
+.pinterest-container.hidden {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+}
+
+.pinterest-grid {
+  column-count: 2;
+  column-gap: 12px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .pinterest-grid {
+    column-count: 3;
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pinterest-grid {
+    column-count: 4;
+  }
+}
+
+.pin-card {
+  break-inside: avoid;
+  margin-bottom: 12px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .pin-card {
+    margin-bottom: 16px;
+  }
+}
+
+.pin-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3), 0 0 10px rgba(139, 92, 246, 0.2);
+}
+
+.pin-card img,
+.pin-card video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pin-card:hover img,
+.pin-card:hover video {
+  transform: scale(1.02);
+}
+
+.pin-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
 
 /* --- REGLAS RESPONSIVAS Y CORRECCIÓN DE DESBORDAMIENTO --- */
 @media (max-width: 768px) {
