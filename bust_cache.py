@@ -11,12 +11,9 @@ for d in dirs:
             with open(filepath, 'r', encoding='utf-8') as file:
                 content = file.read()
             
-            # Match href="../css/articulos.css" or href="../css/articulos.css?v=2"
-            # and replace with href="../css/articulos.css?v=6"
-            
             def repl(match):
                 base = match.group(1)
-                return f'href="{base}?v=6"'
+                return f'href="{base}?v=7"'
                 
             new_content = re.sub(r'href="(.*?\.css)(?:\?v=\d+)?"', repl, content)
             

@@ -431,9 +431,11 @@ html.light-mode body .nav-pages button:hover {
 }
 
 .nav-brand-logo {
-  height: 32px;
-  width: auto;
-  border-radius: 4px; /* Soft edges for the logo */
+  height: 32px !important;
+  width: 32px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
 }
 
 .nav-brand-text {
