@@ -312,32 +312,32 @@
                             </div>
                         </div>
 
-                        <button id="openGalleryInyec" class="gallery-open-btn">Ver Galería Multimedia</button>
-
-                        <div id="galleryModalInyec" class="gallery-modal">
-                            <button id="closeGalleryInyec" class="gallery-close-btn">&times;</button>
-                            <div class="pinterest-grid">
-                                <div class="pin-card">
-                                    <span class="pin-badge">Capacitación</span>
-                                    <video src="../img-cap/img-inyec/WhatsApp Video 2026-07-22 at 17.57.53.mp4" autoplay loop muted playsinline></video>
-                                </div>
-                                <div class="pin-card">
-                                    <span class="pin-badge">Inyectología</span>
-                                    <img src="../img-cap/img-inyec/image.png" alt="Inyectologia">
-                                </div>
-                                <div class="pin-card">
-                                    <span class="pin-badge">Equipo</span>
-                                    <video src="../img-cap/img-inyec/WhatsApp Video 2026-07-22 at 17.57.54.mp4" autoplay loop muted playsinline></video>
-                                </div>
-                                <div class="pin-card">
-                                    <span class="pin-badge">Práctica</span>
-                                    <img src="../img-cap/img-inyec/image copy.png" alt="Práctica">
-                                </div>
-                                <div class="pin-card">
-                                    <video src="../img-cap/img-inyec/WhatsApp Video 2026-07-22 at 17.57.55.mp4" autoplay loop muted playsinline></video>
-                                </div>
-                                <div class="pin-card">
-                                    <img src="../img-cap/img-inyec/image copy 2.png" alt="Técnica">
+                        <div class="gallery-wrapper">
+                            <button id="toggleGalleryInyec" class="gallery-toggle-btn">Cerrar</button>
+                            <div id="galleryContainerInyec" class="pinterest-container">
+                                <div class="pinterest-grid">
+                                    <div class="pin-card">
+                                        <span class="pin-badge">Capacitación</span>
+                                        <video src="../img-cap/img-inyec/WhatsApp Video 2026-07-22 at 17.57.53.mp4" autoplay loop muted playsinline></video>
+                                    </div>
+                                    <div class="pin-card">
+                                        <span class="pin-badge">Inyectología</span>
+                                        <img src="../img-cap/img-inyec/image.png" alt="Inyectologia">
+                                    </div>
+                                    <div class="pin-card">
+                                        <span class="pin-badge">Equipo</span>
+                                        <video src="../img-cap/img-inyec/WhatsApp Video 2026-07-22 at 17.57.54.mp4" autoplay loop muted playsinline></video>
+                                    </div>
+                                    <div class="pin-card">
+                                        <span class="pin-badge">Práctica</span>
+                                        <img src="../img-cap/img-inyec/image copy.png" alt="Práctica">
+                                    </div>
+                                    <div class="pin-card">
+                                        <video src="../img-cap/img-inyec/WhatsApp Video 2026-07-22 at 17.57.55.mp4" autoplay loop muted playsinline></video>
+                                    </div>
+                                    <div class="pin-card">
+                                        <img src="../img-cap/img-inyec/image copy 2.png" alt="Técnica">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -350,21 +350,22 @@
 
                         <script>
                             document.addEventListener('DOMContentLoaded', () => {
-                                const openBtn = document.getElementById('openGalleryInyec');
-                                const closeBtn = document.getElementById('closeGalleryInyec');
-                                const modal = document.getElementById('galleryModalInyec');
+                                const btn = document.getElementById('toggleGalleryInyec');
+                                const container = document.getElementById('galleryContainerInyec');
                                 
                                 // Lightbox variables
                                 const lightbox = document.getElementById('mediaLightboxInyec');
                                 const lightboxContent = lightbox.querySelector('.lightbox-content');
                                 const closeLightboxBtn = document.getElementById('closeLightboxInyec');
 
-                                if(openBtn && closeBtn && modal) {
-                                    openBtn.addEventListener('click', () => {
-                                        modal.classList.add('active');
-                                    });
-                                    closeBtn.addEventListener('click', () => {
-                                        modal.classList.remove('active');
+                                if(btn && container) {
+                                    btn.addEventListener('click', () => {
+                                        container.classList.toggle('hidden');
+                                        if(container.classList.contains('hidden')) {
+                                            btn.textContent = 'Ver Galería';
+                                        } else {
+                                            btn.textContent = 'Cerrar';
+                                        }
                                     });
                                 }
 
