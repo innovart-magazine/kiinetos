@@ -382,7 +382,32 @@
                                     });
                                 }
 
-                                // Setup Lightbox for me
+                                // Setup Lightbox for media
+                                document.querySelectorAll('.pin-card img, .pin-card video').forEach(media => {
+                                    media.style.cursor = 'pointer'; // Make it obvious it's clickable
+                                    media.addEventListener('click', () => {
+                                        lightboxContent.innerHTML = ''; // clear previous
+                                        if (media.tagName === 'IMG') {
+                                            const img = document.createElement('img');
+                                            img.src = media.src;
+                                            lightboxContent.appendChild(img);
+                                        } else if (media.tagName === 'VIDEO') {
+                                            const vid = document.createElement('video');
+                                            vid.src = media.src;
+                                            vid.controls = true; // allow volume control
+                                            vid.autoplay = true; // start playing
+                                            lightboxContent.appendChild(vid);
+                                        }
+                                        lightbox.classList.add('active');
+                                    });
+                                });
+
+                                if(closeLightboxBtn && lightbox) {
+                                    closeLightboxBtn.addEventListener('click', () => {
+                                        lightbox.classList.remove('active');
+                                        lightboxContent.innerHTML = ''; // clear and stop video
+                                    });
+                                }
                             });
                         </script>
 
