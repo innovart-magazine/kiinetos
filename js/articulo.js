@@ -1,81 +1,55 @@
 // ===== CONTROL DE PAGINACIÓN =====
 document.addEventListener('DOMContentLoaded', function() {
-    const container = document.querySelector('.pages-container');
+    const pages = document.querySelectorAll('.page');
     const prevBtn = document.getElementById('prevPage');
     const nextBtn = document.getElementById('nextPage');
     const pageIndicator = document.getElementById('pageIndicator');
     let currentPageIndex = 0;
-    let totalPages = 0;
 
-    function updateIndicator() {
-        if (!pageIndicator) return;
-        const pages = container.querySelectorAll('.page');
-        totalPages = pages.length;
-        let visibleIndex = 0;
-        const scrollLeft = container.scrollLeft;
-        const containerWidth = container.clientWidth;
-
-        let minDistance = Infinity;
-
-        pages.forEach((page, idx) => {
-            const rect = page.getBoundingClientRect();
-            const containerRect = container.getBoundingClientRect();
-            const distance = Math.abs(rect.left - containerRect.left);
-            if (distance < minDistance) {
-                minDistance = distance;
-                visibleIndex = idx;
+    function showPage(index) {
+        if (pages.length === 0) return;
+        pages.forEach((page, i) => {
+            if (i === index) {
+                page.style.display = 'block';
+                // Animación suave de entrada de página
+                page.style.opacity = '0';
+                page.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    page.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                    page.style.opacity = '1';
+                    page.style.transform = 'translateY(0)';
+                }, 10);
+            } else {
+                page.style.display = 'none';
             }
         });
 
-        currentPageIndex = visibleIndex;
-        pageIndicator.textContent = `Página ${currentPageIndex+1} de ${totalPages}`;
-        if (prevBtn) prevBtn.disabled = currentPageIndex === 0;
-        if (nextBtn) nextBtn.disabled = currentPageIndex === totalPages - 1;
+        if (prevBtn) prevBtn.disabled = index === 0;
+        if (nextBtn) nextBtn.disabled = index === pages.length - 1;
+        if (pageIndicator) pageIndicator.textContent = `Página ${index + 1} / ${pages.length}`;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Ocultar nav-pages al hacer scroll vertical en las páginas
-    const navPages = document.querySelector('.nav-pages');
-    let scrollTimeout;
-
-    if (container) {
-        const pages = container.querySelectorAll('.page');
-        pages.forEach(page => {
-            page.addEventListener('scroll', () => {
-                if (navPages) {
-                    navPages.style.opacity = '0';
-                    navPages.style.pointerEvents = 'none';
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(() => {
-                        navPages.style.opacity = '';
-                        navPages.style.pointerEvents = '';
-                    }, 400);
-                }
-            }, { passive: true });
-        });
-
-        container.addEventListener('scroll', updateIndicator);
-        // Actualizar al cargar y al cambiar tamaño
-        window.addEventListener('resize', updateIndicator);
-        setTimeout(updateIndicator, 100);
-    }
-
-    // Botones de navegación
     if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
+        prevBtn.addEventListener('click', () => {
             if (currentPageIndex > 0) {
-                const pages = container.querySelectorAll('.page');
-                pages[currentPageIndex - 1].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+                currentPageIndex--;
+                showPage(currentPageIndex);
             }
         });
     }
 
     if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-            const pages = container.querySelectorAll('.page');
+        nextBtn.addEventListener('click', () => {
             if (currentPageIndex < pages.length - 1) {
-                pages[currentPageIndex + 1].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+                currentPageIndex++;
+                showPage(currentPageIndex);
             }
         });
+    }
+
+    if (pages.length > 0) {
+        showPage(0);
     }
 });
 
