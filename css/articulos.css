@@ -2095,11 +2095,12 @@ html.light-mode body .carousel-nav-btn:hover {
   width: 100%;
   height: 100%;
   background: #0b0b0b; /* Solid background for the modal */
-  z-index: 1000;
+  z-index: 10000;
   overflow-y: auto;
   transition: top 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 2rem;
-  padding-top: 5rem;
+  padding: 1rem;
+  padding-top: 80px;
+  box-sizing: border-box;
 }
 
 .gallery-modal.active {
@@ -2121,7 +2122,7 @@ html.light-mode body .carousel-nav-btn:hover {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 1010;
+  z-index: 10010;
   transition: all 0.3s ease;
 }
 
@@ -2204,7 +2205,7 @@ html.light-mode body .carousel-nav-btn:hover {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.95);
-    z-index: 9999;
+    z-index: 999999;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2230,7 +2231,7 @@ html.light-mode body .carousel-nav-btn:hover {
     height: 45px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 1000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2243,17 +2244,21 @@ html.light-mode body .carousel-nav-btn:hover {
 }
 
 .lightbox-content {
-    max-width: 95%;
-    max-height: 95%;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .lightbox-content img, 
 .lightbox-content video {
     max-width: 100%;
-    max-height: 90vh;
+    max-height: 100%;
+    width: auto;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
     object-fit: contain;
