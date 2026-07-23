@@ -425,6 +425,19 @@ html.light-mode body .nav-pages button:hover {
 
 .nav-brand {
   display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-brand-logo {
+  height: 32px;
+  width: auto;
+  border-radius: 4px; /* Soft edges for the logo */
+}
+
+.nav-brand-text {
+  display: flex;
   flex-direction: column;
   line-height: 1.1;
 }
