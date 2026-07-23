@@ -383,23 +383,10 @@
               </div>
             </div>
           </div>
-
-          <!-- Lightbox para la galería -->
-          <div id="mediaLightboxPa" class="media-lightbox">
-              <button id="closeLightboxPa" class="lightbox-close-btn">&times;</button>
-              <div class="lightbox-content"></div>
-          </div>
-
           <script>
             document.addEventListener('DOMContentLoaded', () => {
               const btn = document.getElementById('toggleGalleryPa');
               const container = document.getElementById('galleryContainerPa');
-              
-              // Lightbox variables
-              const lightbox = document.getElementById('mediaLightboxPa');
-              const lightboxContent = lightbox.querySelector('.lightbox-content');
-              const closeLightboxBtn = document.getElementById('closeLightboxPa');
-
               if (btn && container) {
                 btn.addEventListener('click', () => {
                   container.classList.toggle('hidden');
@@ -409,32 +396,6 @@
                     btn.textContent = 'Cerrar';
                   }
                 });
-              }
-
-              // Setup Lightbox for media
-              document.querySelectorAll('.pin-card img, .pin-card video').forEach(media => {
-                  media.addEventListener('click', () => {
-                      lightboxContent.innerHTML = ''; // clear previous
-                      if (media.tagName === 'IMG') {
-                          const img = document.createElement('img');
-                          img.src = media.src;
-                          lightboxContent.appendChild(img);
-                      } else if (media.tagName === 'VIDEO') {
-                          const vid = document.createElement('video');
-                          vid.src = media.src;
-                          vid.controls = true; // allow volume control
-                          vid.autoplay = true;
-                          lightboxContent.appendChild(vid);
-                      }
-                      lightbox.classList.add('active');
-                  });
-              });
-
-              if(closeLightboxBtn && lightbox) {
-                  closeLightboxBtn.addEventListener('click', () => {
-                      lightbox.classList.remove('active');
-                      lightboxContent.innerHTML = ''; // clear and stop video
-                  });
               }
             });
           </script>
