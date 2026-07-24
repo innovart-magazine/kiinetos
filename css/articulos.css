@@ -2335,7 +2335,9 @@ html.light-mode body .carousel-nav-btn:hover {
   max-height: 3000px;
 }
 
-.accordion-content {
+.accordion-card .accordion-content {
+  max-height: none;
+  overflow: visible;
   padding: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
