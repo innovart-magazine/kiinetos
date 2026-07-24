@@ -320,8 +320,8 @@
                         </div>
 
                         <div class="gallery-wrapper">
-                            <button id="toggleGalleryInyec" class="gallery-toggle-btn">Cerrar</button>
-                            <div id="galleryContainerInyec" class="pinterest-container">
+                            <button id="toggleGalleryInyec" class="gallery-toggle-btn">Ver Galería</button>
+                            <div id="galleryContainerInyec" class="pinterest-container hidden">
                                 <div class="pinterest-grid">
                                     <div class="pin-card">
                                         <span class="pin-badge">Capacitación</span>
@@ -377,12 +377,39 @@
                                         if (container.classList.contains('hidden')) {
                                             btn.textContent = 'Ver Galería';
                                         } else {
-                                            btn.textContent = 'Cerrar';
+                                            btn.textContent = 'Cerrar Galería';
                                         }
                                     });
                                 }
 
+                                // Pinterest/TikTok inline video sound interaction
+                                document.querySelectorAll('.pin-card video').forEach(video => {
+                                    video.style.cursor = 'pointer';
+                                    const card = video.closest('.pin-card');
+                                    card.style.position = 'relative';
 
+                                    const indicator = document.createElement('div');
+                                    indicator.className = 'video-sound-indicator';
+                                    indicator.innerHTML = '🔇';
+                                    card.appendChild(indicator);
+
+                                    video.addEventListener('click', () => {
+                                        if (video.muted) {
+                                            document.querySelectorAll('.pin-card video').forEach(v => {
+                                                if (v !== video) {
+                                                    v.muted = true;
+                                                    const otherInd = v.closest('.pin-card').querySelector('.video-sound-indicator');
+                                                    if (otherInd) otherInd.innerHTML = '🔇';
+                                                }
+                                            });
+                                            video.muted = false;
+                                            indicator.innerHTML = '🔊';
+                                        } else {
+                                            video.muted = true;
+                                            indicator.innerHTML = '🔇';
+                                        }
+                                    });
+                                });
                             });
                         </script>
 
