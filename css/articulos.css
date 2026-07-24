@@ -2398,11 +2398,6 @@ html.light-mode body .carousel-nav-btn:hover {
   }
 }
 
-@media (min-width: 1024px) {
-  .pinterest-grid {
-    column-count: 4;
-  }
-}
 
 .pin-card {
   break-inside: avoid;
