@@ -13,7 +13,7 @@ for d in dirs:
             
             def repl(match):
                 base = match.group(1)
-                return f'href="{base}?v=7"'
+                return f'href="{base}?v=8"'
                 
             new_content = re.sub(r'href="(.*?\.css)(?:\?v=\d+)?"', repl, content)
             

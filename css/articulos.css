@@ -2178,6 +2178,185 @@ html.light-mode body .carousel-nav-btn:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
+/* ===== STICKY FILTER CHIPS (NAVBAR) ===== */
+.sticky-filter-bar {
+  position: sticky;
+  top: 60px; /* Debajo del navbar global */
+  z-index: 90;
+  background: rgba(18, 18, 28, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 16px;
+  margin: 0 -16px 20px -16px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  scrollbar-width: none; /* Firefox */
+  align-items: center;
+}
+
+.sticky-filter-bar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.filter-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a1a1aa;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.filter-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.filter-chip.active {
+  background: linear-gradient(135deg, #7c3aed, #38bdf8);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.filter-chip-all {
+  background: rgba(124, 58, 237, 0.2);
+  border-color: rgba(124, 58, 237, 0.4);
+  color: #d8b4fe;
+}
+
+/* ===== ACCORDIONS (ACORDEONES DE CRISTAL) ===== */
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.accordion-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  scroll-margin-top: 130px; /* Compensa el navbar global y el sticky filter bar */
+}
+
+.accordion-card.active {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.accordion-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+}
+
+.accordion-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.accordion-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+}
+
+.accordion-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.accordion-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin: 0;
+}
+
+.accordion-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.accordion-chevron {
+  color: #94a3b8;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion-card.active .accordion-chevron {
+  transform: rotate(180deg);
+  color: #d8b4fe;
+}
+
+.accordion-body {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.accordion-card.active .accordion-body {
+  opacity: 1;
+  /* max-height controlado vía JS para que sea exacto al contenido, o usar un max-height gigante seguro */
+  max-height: 3000px;
+}
+
+.accordion-content {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.accordion-content h5 {
+  color: #38bdf8;
+  margin-top: 0;
+}
+
+.accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Ajustes Responsive */
+@media (min-width: 768px) {
+  .sticky-filter-bar {
+    padding: 16px 24px;
+    margin: 0 -24px 24px -24px;
+  }
+}
+
 .lightbox-close-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: rotate(90deg);
