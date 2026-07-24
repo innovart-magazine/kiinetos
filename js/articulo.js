@@ -106,8 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
     applyTheme(document.body.classList.contains("light-mode"));
     themeBtn.addEventListener("click", function () {
       document.body.classList.toggle("light-mode");
-      const isLight = document.body.classList.contains("light-mode");
+      document.documentElement.classList.toggle("light-mode");
+      const isLight = document.body.classList.contains("light-mode") || document.documentElement.classList.contains("light-mode");
       localStorage.setItem("kinetos-theme", isLight ? "light" : "dark");
+      applyTheme(isLight);
       document.dispatchEvent(new CustomEvent('themeToggled', { detail: { isLight } }));
     });
   }

@@ -23,12 +23,20 @@
         /* Imagen de cabecera de la visita */
         .visit-hero-img {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
+            height: auto;
+            max-height: 650px;
+            object-fit: contain;
             border-radius: 12px;
             margin-bottom: 24px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .visit-hero-img {
+                max-height: 400px;
+            }
         }
     </style>
 </head>
@@ -37,12 +45,12 @@
 
     <nav class="global-navbar">
         <div class="nav-brand">
-      <img src="../img/innovartnew.png" alt="Logo Innovart" class="nav-brand-logo">
-      <div class="nav-brand-text">
-        <span class="nav-brand-title">INNOV<span>ART</span></span>
-            <span class="nav-brand-sub">UNITEC</span>
-      </div>
-    </div>
+            <img src="../img/innovartnew.png" alt="Logo Innovart" class="nav-brand-logo">
+            <div class="nav-brand-text">
+                <span class="nav-brand-title">INNOV<span>ART</span></span>
+                <span class="nav-brand-sub">UNITEC</span>
+            </div>
+        </div>
         <a href="../section/visitas.html" class="nav-center-link">KINETOS</a>
         <div class="nav-actions">
             <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Modo claro/oscuro">
@@ -83,64 +91,155 @@
         <div class="pages-container">
             <!-- Página 1 -->
             <div class="page" style="display: block;">
-                <div class="page-number">Página 1 de 2</div>
+                <div class="page-number">Página 1 de 4</div>
                 <div class="page-content">
+                    <h2>Un viaje al corazón de la manufactura nacional: <span class="highlight">Estudiantes de la UNITEC
+                            viven la experiencia industrial en Alimentos Polar Turmero</span></h2>
+                    <p class="byline">Por: Equipo de Proyecto Institucional INNOVART | Fotografía: Cortesía del Grupo de
+                        Visita Técnica UNITEC | 17 de Junio de 2026</p>
 
-                    <h2>Cultura Organizacional: <span class="highlight">La experiencia dentro de Empresas Polar</span>
-                    </h2>
-                    <p class="byline">Por Equipo Kinetos | 24 de Julio, 2026</p>
+                    <img src="../visitas/img/image.png" class="visit-hero-img" alt="Llegada a Alimentos Polar"
+                        loading="lazy">
 
-                    <p>Como parte de nuestro compromiso con el entendimiento de las dinámicas de capital humano en
-                        entornos reales de alta exigencia, el equipo de investigación de Innovart y estudiantes de la
-                        UNITEC tuvimos la oportunidad de realizar un recorrido por las instalaciones operativas de
-                        <strong>Empresas Polar</strong>, uno de los complejos agroindustriales más grandes del
-                        continente.
-                    </p>
+                    <p>El pasado miércoles 17 de junio de 2026, un grupo de 22 estudiantes de la Universidad Tecnológica
+                        del Centro (UNITEC), pertenecientes a diversas carreras de Licenciatura e Ingeniería, vivieron
+                        una experiencia transformadora tras las puertas de uno de los complejos industriales más
+                        emblemáticos del país: la planta de <strong>Alimentos Polar ubicada en Turmero</strong>.</p>
 
-                    <p>Durante la jornada, el objetivo principal fue analizar cómo se aplican en la práctica las
-                        metodologías de selección, evaluación y capacitación que hemos estado estudiando. Polar destaca
-                        por tener un modelo de gestión enfocado no solo en la eficiencia, sino fuertemente en el sentido
-                        de pertenencia y el bienestar integral de su talento humano.</p>
+                    <p>Esta importante actividad fue ideada, planificada y concretada de forma exitosa a través del
+                        equipo de proyecto institucional <strong>INNOVART</strong>, demostrando el compromiso del
+                        movimiento estudiantil por tender puentes directos entre la academia y el sector productivo
+                        real.</p>
 
-                    <div class="quote">
-                        "El recurso más valioso no es la maquinaria de última generación, sino el operador que, con años
-                        de experiencia y formación continua, sabe cómo optimizar su rendimiento diario."
-                    </div>
+                    <p>El grupo de participantes destacó por su diversidad e integración. En esta jornada coincidieron
+                        alumnos de múltiples modalidades formativas —virtual, presencial diurno y presencial sabatino—,
+                        evidenciando cómo el aprendizaje práctico y la curiosidad profesional unen a nuestra comunidad
+                        universitaria en un mismo espacio de crecimiento.</p>
 
-                    <p>Pudimos conversar con líderes de área y gerentes de RRHH, quienes nos compartieron los retos que
-                        enfrentan actualmente para adaptar sus programas de formación a las nuevas generaciones,
-                        manteniendo al mismo tiempo los valores fundacionales de la corporación.</p>
+                    <img src="../visitas/img/image copy 4.png" class="visit-hero-img" alt="Cultura de seguridad"
+                        loading="lazy">
+
+                    <h3>1. Primer contacto: Cultura de seguridad y rigurosidad patrimonial</h3>
+                    <p>Desde el instante de la llegada, la experiencia sirvió como una lección magistral sobre cultura
+                        organizacional. El protocolo de ingreso estuvo liderado por el personal de <strong>Seguridad
+                            Patrimonial y de Protección y Control de Pérdidas (PCP)</strong> de Alimentos Polar, quienes
+                        guiaron a los estudiantes a través de rigurosas inspecciones e inducciones de control de
+                        accesos.</p>
+                    <p>Para los jóvenes universitarios, este trayecto inicial hacia la sala de conferencias no fue un
+                        mero trámite, sino la comprobación en tiempo real de cómo se ejecuta un estándar internacional
+                        de seguridad industrial.</p>
                 </div>
             </div>
 
             <!-- Página 2 -->
             <div class="page" style="display:none;">
-                <div class="page-number">Página 2 de 2</div>
+                <div class="page-number">Página 2 de 4</div>
                 <div class="page-content">
-                    <h2>Seguridad y Prevención: <span class="highlight">Un estándar innegociable</span></h2>
+                    <h2>2. Tradición, innovación y detalle en los procesos productivos</h2>
 
-                    <p>Otro de los ejes de investigación durante la visita fue el sistema de <strong>Seguridad y
-                            Prevención de Riesgos</strong>. Al tratarse de una planta con un volumen masivo de
-                        operaciones mecánicas, químicas y logísticas, la cultura de prevención de riesgos no es solo un
-                        protocolo en papel, es una conducta interiorizada por cada empleado.</p>
+                    <p>Ya en el salón de reuniones, la jornada comenzó con la bienvenida de los facilitadores designados
+                        por la empresa, quienes contextualizaron la historia, la visión operacional y la normativa
+                        interna de seguridad.</p>
 
-                    <p>Observamos en vivo la ejecución de pausas activas, el riguroso uso de equipos de protección
-                        personal (EPP) y cómo los indicadores de seguridad (Cero Accidentes) son exhibidos y celebrados
-                        en cada departamento como un logro de todo el equipo.</p>
+                    <img src="../visitas/img/image copy 7.png" class="visit-hero-img" alt="Harina PAN" loading="lazy">
 
-                    <p><strong>Principales Aprendizajes:</strong></p>
+                    <h3>La Harina PAN: Identidad y transformación técnica</h3>
+                    <p>Uno de los momentos más inspiradores fue el recorrido histórico de la Harina PAN. Los ponentes
+                        explicaron la evolución que ha tenido el producto en imagen, empaque y tecnología de
+                        procesamiento desde sus orígenes hasta la actualidad. Se desglosó detalladamente cada etapa de
+                        transformación del maíz, mostrando cómo una materia prima agrícola se convierte en un rubro
+                        terminado de altísima demanda y arraigo nacional mediante operaciones unitarias perfectamente
+                        sincronizadas.</p>
+
+                    <img src="../visitas/img/image copy 5.png" class="visit-hero-img visit-img-tall"
+                        alt="Aceite Maizeite" loading="lazy">
+
+                    <h3>Aceite Maizeite: Maestría en control de calidad</h3>
+                    <p>Posteriormente, el equipo técnico presentó el proceso productivo del aceite Maizeite. La
+                        explicación cautivó a los asistentes por el profundo dominio técnico mostrado por la ponente y
+                        por la complejidad del flujo operativo. Destacó de forma especial el riguroso sistema de
+                        <strong>tratamiento químico y los controles analíticos continuos</strong> que garantizan la
+                        pureza, estabilidad e inocuidad del aceite en cada lote.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Página 3 -->
+            <div class="page" style="display:none;">
+                <div class="page-number">Página 3 de 4</div>
+                <div class="page-content">
+                    <h2>3. Inmersión en planta: Inocuidad, manufactura y servicios industriales</h2>
+                    <p>Para la segunda fase de la visita, el grupo adoptó el perfil de campo exigido por las Buenas
+                        Prácticas de Manufactura (BPM). Tras recibir cascos, lentes de protección y protectores
+                        auditivos, y despojarse de accesorios y teléfonos celulares, los futuros profesionales se
+                        dividieron en dos equipos para optimizar la movilidad en las líneas activas.</p>
+
+                    <img src="../visitas/img/image copy 2.png" class="visit-hero-img" alt="Líneas de Producción"
+                        loading="lazy">
+
+                    <h3>En las líneas de Harina PAN</h3>
+                    <p>Para acceder a los recintos de producción de harina, empaquetado y paletizado de producto
+                        terminado, cada estudiante fue dotado de indumentaria desechable especial (braga, gorro y
+                        tapaboca). En este bloque, los participantes observaron:</p>
                     <ul>
-                        <li>La retención de talento en entornos industriales requiere más que un buen salario; exige
-                            planes de carrera claros.</li>
-                        <li>La seguridad laboral mejora cuando los trabajadores son parte del diseño de los protocolos y
-                            no solo ejecutores.</li>
-                        <li>Las líneas de comunicación abierta son vitales para identificar "cuellos de botella"
-                            operativos.</li>
+                        <li>El flujo continuo de molienda y empaquetado a alta velocidad.</li>
+                        <li>Los sistemas automáticos de paletizado que consolidan la carga lista para distribución.</li>
+                        <li>La aplicación práctica de los controles de inocuidad alimentaria en zona crítica.</li>
                     </ul>
 
-                    <p>Esta visita refuerza nuestra Línea de Trabajo en <em>Seguridad y Prevención</em>, brindándonos
-                        casos de estudio valiosos que pronto integraremos en los programas de formación para los futuros
-                        líderes en Gestión Humana de la UNITEC.</p>
+                    <img src="../visitas/img/image copy 8.png" class="visit-hero-img" alt="Sala de máquinas"
+                        loading="lazy">
+
+                    <h3>Sala de máquinas: El corazón de la infraestructura</h3>
+                    <p>El recorrido culminó en la sala de máquinas, un entorno fundamental para la formación en
+                        ingeniería y gestión. Recibidos por personal altamente calificado en servicios industriales, el
+                        grupo inspeccionó de cerca:</p>
+                    <ol>
+                        <li><strong>Compresores de aire y pulmones de almacenamiento:</strong> Fundamentales para la
+                            automatización neumática de toda la planta.</li>
+                        <li><strong>Tratamiento de agua y planta de ósmosis inversa:</strong> Sistemas esenciales para
+                            el agua de proceso y servicios.</li>
+                        <li><strong>Planta de tratamiento de efluentes:</strong> Ejemplo de gestión ambiental y
+                            sostenibilidad operativa.</li>
+                        <li><strong>Calderas pirotubulares y acuatubulares:</strong> Generadoras de la energía térmica
+                            requerida en las distintas fases del proceso productivo.</li>
+                    </ol>
+                    <p>Durante este tramo, el personal técnico ofreció una explicación detallada sobre la criticidad de
+                        cada equipo, la importancia del mantenimiento preventivo y los sistemas de monitoreo y control
+                        en tiempo real.</p>
+                </div>
+            </div>
+
+            <!-- Página 4 -->
+            <div class="page" style="display:none;">
+                <div class="page-number">Página 4 de 4</div>
+                <div class="page-content">
+                    <h2>4. Reflexión académica: Un impulso al futuro profesional</h2>
+                    <p>La jornada concluyó con la acostumbrada fotografía grupal, un momento lleno de entusiasmo donde
+                        se autorizó plasmar el recuerdo de esta importante vivencia académica.</p>
+
+                    <img src="../visitas/img/image copy 6.png" class="visit-hero-img visit-img-tall"
+                        alt="Fotografía Grupal" loading="lazy">
+
+                    <p>Gracias a la gestión de INNOVART, este tipo de salidas de campo representa un valor agregado
+                        incalculable. La convivencia entre estudiantes que ya se desempeñan en el entorno laboral y
+                        aquellos que aún no han tenido su primera experiencia profesional generó una sinergia única: la
+                        transferencia de visiones, la discusión técnica y el despertar de vocaciones.</p>
+
+                    <div class="quote">
+                        "Ver la teoría cobrar vida en una planta de la envergadura de Alimentos Polar no solo fortalece
+                        el perfil académico, sino que enamora al estudiante del mundo de la manufactura. Nos recuerda
+                        que cada trabajador, desde el área de seguridad hasta la sala de máquinas, aporta un valor
+                        imprescindible para que los objetivos organizacionales se cumplan."<br><br>
+                        <em>— Reflexión colectiva de los estudiantes participantes.</em>
+                    </div>
+
+                    <p>Iniciativas como esta reafirman el compromiso de la UNITEC y sus proyectos institucionales con
+                        una formación integral, conectada con las realidades del sector productivo nacional y orientada
+                        a formar profesionales preparados para los retos de la industria moderna.</p>
+
+                    <img src="../visitas/img/image copy 9.png" class="visit-hero-img visit-img-tall"
+                        alt="Reflexión y Despedida" loading="lazy">
                 </div>
             </div>
         </div>
